@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="src/styles/styles.css" />
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+      integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <title>Máximo Crepes</title>
+  </head>
+  <body>
+    <header>
+      <nav id="navbar">
+        <img src="src/images/logo.png" alt="">
+
+        <ul id="nav_list">
+          <li class="nav-item active">
+            <a href="#home">Início</a>
+          </li>
+          <li class="nav-item">
+            <a href="#menu">Cardápio</a>
+          </li>
+          <li class="nav-item">
+            <a href="#testimonials">Avaliações</a>
+          </li>
+          <li class="nav-item">
+  <a href="#mapa">Localização</a>
+</li>
+        </ul>
+
+        <button class="btn-default">Peça aqui</button>
+
+        <button id="mobile_btn">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </nav>
+
+      <div id="mobile_menu">
+        <ul id="mobile_nav_list">
+          <li class="nav-item">
+            <a href="#home">Início</a>
+          </li>
+          <li class="nav-item">
+            <a href="#menu">Cardápio</a>
+          </li>
+          <li class="nav-item">
+            <a href="#testimonials">Avaliações</a>
+          </li>
+          <li class="nav-item">
+  <a href="#mapa">Localização</a>
+</li>
+        </ul>
+
+        <button class="btn-default">Peça aqui</button>
+      </div>
+    </header>
+
+    <main id="content">
+      <section id="home">
+        <div class="shape"></div>
+        <div id="cta">
+          <h1 class="title">
+            Crepe de verdade, com a <span>máxima</span> qualidade!
+          </h1>
+
+          <p class="description">
+            Receitas autênticas feitas com paixão, trazendo o melhor da Itália até você.
+          </p>
+
+          <div id="cta_buttons">
+            <a href="#" class="btn-default"> Ver cardápio </a>
+
+            <a href="https://wa.me/5561982714522" id="phone_button">
+              <button class="btn-default">
+                <i class="fa-solid fa-phone"></i>
+              </button>
+              (61) 98271-4522
+            </a>
+          </div>
+
+          <div class="social-media-buttons">
+            <a href="">
+              <i class="fa-brands fa-whatsapp"></i>
+            </a>
+
+            <a href="">
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+
+            <a href="">
+              <i class="fa-solid fa-box-open"></i>
+            </a>
+          </div>
+        </div>
+
+        <div id="banner">
+          <img src="src/images/hero.png" alt="" />
+        </div>
+      </section>
+
+      <section id="menu">
+        <h2 class="section-title">CARDÁPIO</h2>
+        <h3 class="section-subtitle">QUERIDINHOS DA GALERA</h3>
+
+        <div id="dishes">
+          <div class="dish">
+            <div class="dish-heart">
+              <i class="fa-solid fa-heart"></i>
+            </div>
+
+            <img src="src/images/logo.png" class="dish-image" alt="" />
+
+            <h3 class="dish-title">Crepe do Papai</h3>
+
+            <span class="dish-description">
+              Queijo, carne de sol, calabresa, bacon, milho, tomate, orégano e catupiry.
+            </span>
+
+            <div class="dish-rate">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <span>(500+)</span>
+            </div>
+
+            <div class="dish-price">
+              <h4>R$28,00</h4>
+            </div>
+          </div>
+
+          <div class="dish">
+            <div class="dish-heart">
+              <i class="fa-solid fa-heart"></i>
+            </div>
+
+            <img src="src/images/logo.png" class="dish-image" alt="" />
+
+            <h3 class="dish-title">Crepe da Mamãe</h3>
+
+            <span class="dish-description">
+              Queijo, frango, calabresa, bacon, milho, tomate, orégano e catupiry.
+            </span>
+
+            <div class="dish-rate">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <span>(500+)</span>
+            </div>
+
+            <div class="dish-price">
+              <h4>R$28,00</h4>
+              </button>
+            </div>
+          </div>
+
+          <div class="dish">
+            <div class="dish-heart">
+              <i class="fa-solid fa-heart"></i>
+            </div>
+
+            <img src="src/images/logo.png" class="dish-image" alt="" />
+
+            <h3 class="dish-title">Frango Com Bacon</h3>
+
+            <span class="dish-description">
+              Queijo, frango, bacon, milho, orégano e catupiry.
+            </span>
+
+            <div class="dish-rate">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <span>(500+)</span>
+            </div>
+
+            <div class="dish-price">
+              <h4>R$24,00</h4>
+              </button>
+            </div>
+          </div>
+
+          <div class="dish">
+            <div class="dish-heart">
+              <i class="fa-solid fa-heart"></i>
+            </div>
+
+            <img src="src/images/logo.png" class="dish-image" alt="" />
+
+            <h3 class="dish-title">Carne de Sol</h3>
+
+            <span class="dish-description">
+              Queijo, carne de sol, milho, tomate, orégano e catupiry.
+            </span>
+
+            <div class="dish-rate">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <span>(500+)</span>
+            </div>
+
+            <div class="dish-price">
+              <h4>R$25,00</h4>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="testimonials">
+        <img src="" id="testimonial_chef" alt="" />
+
+        <div id="testimonials_content">
+          <h2 class="section-title">Avaliações</h2>
+          <h3 class="section-subtitle">O que os clientes falam sobre nós</h3>
+
+          <div id="feedbacks">
+            <div class="feedback">
+              <img src="src/images/logo.png" class="feedback-avatar" alt="" />
+
+              <div class="feedback-content">
+                <p>
+                  Cliente 1
+                  <span>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                  </span>
+                </p>
+                <p>
+                  "avaliação 1"
+                </p>
+              </div>
+            </div>
+
+            <div class="feedback">
+              <img src="src/images/logo.png" class="feedback-avatar" alt="" />
+
+              <div class="feedback-content">
+                <p>
+                  cliente 2
+                  <span>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                  </span>
+                </p>
+                <p>
+                  "avaliação 2"
+                </p>
+              </div>
+            </div>
+            <div class="feedback">
+              <img src="src/images/logo.png" class="feedback-avatar" alt="" />
+
+              <div class="feedback-content">
+                <p>
+                  cliente 3
+                  <span>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                  </span>
+                </p>
+                <p>
+                  "avaliação 3"
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+<section id="mapa">
+  <div class="mapa-wrapper">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3839.633173673316!2d-47.8882776239287!3d-15.770533122369864!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x935a3bbfecbb897f%3A0x58958b563799f026!2sM%C3%A1ximo%20Crepes!5e0!3m2!1spt-BR!2sbr!4v1747110789031!5m2!1spt-BR!2sbr" width="1920" height="1080" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    <div class="mapa-texto">
+      <h2>Localização</h2>
+      <p>Venha nos visitar!</p>
+      <img src="src/images/loja.png" alt="Descrição da imagem" class="imagem">
+    </div>
+  </div>
+</section>
+
+
+<script src="src/javascript/script.js"></script>
+
+</body>
+</html>
+
+
