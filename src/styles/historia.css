@@ -1,0 +1,12 @@
+.imagem-cheia {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+
+.imagem-cheia img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}

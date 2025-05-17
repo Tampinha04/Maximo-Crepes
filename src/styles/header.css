@@ -1,12 +1,18 @@
+/* Cabeçalho geral */
 header {
   width: 100%;
-  padding: 28px 8%;
+  padding: 10px 8%;
   position: sticky;
   top: 0;
   background-color: var(--color-primary-1);
   z-index: 3;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 90px;
 }
 
+/* Navbar e logo */
 #navbar {
   width: 100%;
   display: flex;
@@ -19,6 +25,7 @@ header {
   color: var(--color-primary-6);
 }
 
+/* Lista de navegação para desktop */
 #nav_list {
   display: flex;
   list-style: none;
@@ -36,17 +43,48 @@ header {
   border-bottom: 3px solid var(--color-primary-4);
 }
 
-#mobile_btn {
-  display: none;
+/* Botão "Peça aqui" */
+.btn-default {
+  background-color: var(--color-primary-4);
+  color: rgb(255, 255, 255);
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  display: inline-block;
+  transition: transform 0.2s ease, background-color 0.3s, color 0.3s;
 }
 
-#mobile_menu {
-  display: none;
+/* Hover fixo que preserva cor */
+.btn-default:hover {
+  background-color: var(--color-primary-4); /* mantém a mesma cor */
+  color: #a4d000; /* mantém a cor do texto */
+  transform: scale(1.05); /* efeito de aumento */
 }
 
+/* Esconde o botão e menu de navegação no desktop */
+@media screen and (min-width: 1171px) {
+  .btn-default {
+    display: none; /* ← remova esta linha */
+  }
+
+  #mobile_btn {
+    display: none;
+  }
+
+  #nav_list {
+    display: flex;
+  }
+
+  #mobile_menu {
+    display: none;
+  }
+}
+
+/* Estilos para mobile */
 @media screen and (max-width: 1170px) {
-  #nav_list,
-  #navbar .btn-default {
+  #nav_list {
     display: none;
   }
 
@@ -58,36 +96,68 @@ header {
     cursor: pointer;
   }
 
-  #mobile_menu.active {
+  #mobile_menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 0;
+    height: 100%;
+    background-color: #fff;
+    overflow-x: hidden;
+    transition: 0.3s;
+    z-index: 1000;
+    padding-top: 80px;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     align-items: center;
   }
 
+  #mobile_menu.ativo {
+    width: 250px;
+  }
+
   #mobile_nav_list {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    margin: 12px 0px;
-  }
-
-  #mobile_nav_list .nav-item {
     list-style: none;
-    text-align: center;
+    padding: 0;
+    margin: 0;
+    width: 100%;
   }
-}
 
-/* Ajuste da logo */
-header .logo {
-  width: 150px; /* Largura fixa */
-  height: auto; /* Altura automática para manter a proporção */
-}
+  #mobile_nav_list .nav-item a {
+    display: block;
+    padding: 16px 24px;
+    text-decoration: none;
+    color: #1d1d1d;
+    font-weight: 600;
+    border-bottom: 1px solid #eee;
+  }
 
-/* Ajuste da altura do cabeçalho */
-header {
-  height: 80px; /* Ajuste a altura do cabeçalho para um valor menor */
-  padding: 10px 20px; /* Se necessário, ajuste o espaçamento */
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  #mobile_nav_list .nav-item a:hover {
+    background-color: #f2f2f2;
+  }
+
+  #mobile_menu .btn-default {
+    display: block;
+    margin-top: 20px;
+    padding: 12px 24px;
+    background-color: var(--color-primary-4);
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: transform 0.2s ease, background-color 0.3s;
+    text-align: center;
+    width: 80%;
+  }
+
+  .btn-default:not(#mobile_menu .btn-default) {
+    display: none;
+  }
+
+  /* Hover no botão dentro do menu mobile */
+  #mobile_menu .btn-default:hover {
+    transform: scale(1.05);
+  }
 }

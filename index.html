@@ -19,54 +19,56 @@
       referrerpolicy="no-referrer"
     ></script>
     <script src="https://unpkg.com/scrollreveal"></script>
+
+    <link rel="icon" href="src/images/logo.png" type="image/png">
     <title>Máximo Crepes</title>
   </head>
   <body>
     <header>
-      <nav id="navbar">
-        <img src="src/images/logo.png" alt="">
+  <nav id="navbar">
+    <img src="src/images/logo.png" alt="">
 
-        <ul id="nav_list">
-          <li class="nav-item active">
-            <a href="#home">Início</a>
-          </li>
-          <li class="nav-item">
-            <a href="#menu">Cardápio</a>
-          </li>
-          <li class="nav-item">
-            <a href="#testimonials">Avaliações</a>
-          </li>
-          <li class="nav-item">
-  <a href="#mapa">Localização</a>
-</li>
-        </ul>
+    <ul id="nav_list">
+      <li class="nav-item active">
+        <a href="#home">Início</a>
+      </li>
+      <li class="nav-item">
+        <a href="#menu">Cardápio</a>
+      </li>
+      <li class="nav-item">
+        <a href="#testimonials">Avaliações</a>
+      </li>
+      <li class="nav-item">
+        <a href="#mapa">Localização</a>
+      </li>
+      <li class="nav-item">
+        <a href="#historia">Sobre nós</a>
+      </li>
+    </ul>
 
-        <button class="btn-default">Peça aqui</button>
+    <!-- Botão para Desktop -->
+    <a href="https://wa.me/5561982714522" class="btn-default desktop-only">Peça aqui</a>
 
-        <button id="mobile_btn">
-          <i class="fa-solid fa-bars"></i>
-        </button>
-      </nav>
+    <!-- Ícone do menu (três listras) -->
+    <button id="mobile_btn">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+  </nav>
 
-      <div id="mobile_menu">
-        <ul id="mobile_nav_list">
-          <li class="nav-item">
-            <a href="#home">Início</a>
-          </li>
-          <li class="nav-item">
-            <a href="#menu">Cardápio</a>
-          </li>
-          <li class="nav-item">
-            <a href="#testimonials">Avaliações</a>
-          </li>
-          <li class="nav-item">
-  <a href="#mapa">Localização</a>
-</li>
-        </ul>
+  <!-- Menu lateral (somente no mobile) -->
+  <div id="mobile_menu">
+    <ul id="mobile_nav_list">
+  <li class="nav-item"><a href="#home">íncio</a></li>
+  <li class="nav-item"><a href="#menu">Cardápio</a></li>
+  <li class="nav-item"><a href="#testimonials">Avaliação</a></li>
+  <li class="nav-item"><a href="#mapa">Localização</a></li>
+  <li class="nav-item"><a href="#historia">Sobre nós</a></li>
+</ul>
 
-        <button class="btn-default">Peça aqui</button>
-      </div>
-    </header>
+    <!-- Botão 'Peça aqui' no mobile -->
+    <a href="https://wa.me/5561982714522" class="btn-default mobile-only">Peça aqui</a>
+  </div>
+</header>
 
     <main id="content">
       <section id="home">
@@ -81,7 +83,7 @@
           </p>
 
           <div id="cta_buttons">
-            <a href="#" class="btn-default"> Ver cardápio </a>
+            <a href="cardapio.html" class="btn-default"> Ver cardápio </a>
 
             <a href="https://wa.me/5561982714522" id="phone_button">
               <button class="btn-default">
@@ -92,15 +94,15 @@
           </div>
 
           <div class="social-media-buttons">
-            <a href="">
+            <a href="https://wa.me/5561982714522">
               <i class="fa-brands fa-whatsapp"></i>
             </a>
 
-            <a href="">
+            <a href="https://www.instagram.com/maximo_crepes/">
               <i class="fa-brands fa-instagram"></i>
             </a>
 
-            <a href="">
+            <a href="https://www.ifood.com.br/delivery/brasilia-df/maximo-crepes---crepes-e-hamburgueres-superquadra-norte-306/a8e8be0c-5c22-4bac-a58d-b3aad31147ca">
               <i class="fa-solid fa-box-open"></i>
             </a>
           </div>
@@ -230,7 +232,7 @@
       </section>
 
       <section id="testimonials">
-        <img src="" id="testimonial_chef" alt="" />
+        <img src="src/images/chef.png" id="testimonial_chef" alt="" />
 
         <div id="testimonials_content">
           <h2 class="section-title">Avaliações</h2>
@@ -242,7 +244,7 @@
 
               <div class="feedback-content">
                 <p>
-                  Cliente 1
+                  Luísa Lenti
                   <span>
                     <i class="fa-solid fa-star"></i>
                     <i class="fa-solid fa-star"></i>
@@ -252,7 +254,7 @@
                   </span>
                 </p>
                 <p>
-                  "avaliação 1"
+                  "É maravilhoso perceber que o melhor crepe dessa cidade fica numa banquinha na entrada de uma quadra. Simplesmente delicioso a massa é perfeita! Sou fã!"
                 </p>
               </div>
             </div>
@@ -262,7 +264,7 @@
 
               <div class="feedback-content">
                 <p>
-                  cliente 2
+                  Bruno Oli
                   <span>
                     <i class="fa-solid fa-star"></i>
                     <i class="fa-solid fa-star"></i>
@@ -272,7 +274,7 @@
                   </span>
                 </p>
                 <p>
-                  "avaliação 2"
+                  "Máximo Crepes é uma das melhores Creperias do Centro Oeste, lanche com preços acessíveis e ótima qualidade, muito bom."
                 </p>
               </div>
             </div>
@@ -281,7 +283,7 @@
 
               <div class="feedback-content">
                 <p>
-                  cliente 3
+                  Cesar Oliveira
                   <span>
                     <i class="fa-solid fa-star"></i>
                     <i class="fa-solid fa-star"></i>
@@ -291,7 +293,7 @@
                   </span>
                 </p>
                 <p>
-                  "avaliação 3"
+                  "Crepe muuuuito bom! bem recheado, pedi apenas 1 pelo iFood pensando que talvez não fosse ser suficiente, mas foi igual uma refeição! parabéns, extremamente saboroso e a entrega foi bem rápida!"
                 </p>
               </div>
             </div>
@@ -314,6 +316,11 @@
 
 <script src="src/javascript/script.js"></script>
 
+<section id="historia">
+ <div class="imagem-cheia">
+  <img src="src/images/Nossa história.png" alt="">
+ </div>
+</section>
 </body>
 </html>
 
