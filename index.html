@@ -1,0 +1,699 @@
+﻿<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Máximo Crepes: crepes artesanais com ingredientes frescos, entregues com qualidade e carinho em Brasília."
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="src/styles/styles.css" />
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+      integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="https://unpkg.com/scrollreveal"></script>
+
+    <link rel="icon" href="src/images/logo.png" type="image/png" />
+    <title>Máximo Crepes</title>
+  </head>
+  <body data-theme="light">
+    <header>
+      <nav id="navbar">
+        <a href="#home" class="nav-logo" aria-label="Ir para o in&iacute;cio">
+          <img src="src/images/logo.png" alt="Logotipo M&aacute;ximo Crepes" />
+        </a>
+        <ul id="nav_list">
+          <li class="nav-item active">
+            <a href="#home">In&iacute;cio</a>
+          </li>
+          <li class="nav-item">
+            <a href="#menu">Card&aacute;pio</a>
+          </li>
+          <li class="nav-item">
+            <a href="#testimonials">Avalia&ccedil;&otilde;es</a>
+          </li>
+          <li class="nav-item">
+            <a href="#mapa">Localiza&ccedil;&atilde;o</a>
+          </li>
+          <li class="nav-item">
+            <a href="#comunidade">Clube exclusivo</a>
+          </li>
+          <li class="nav-item">
+            <a href="#sobre-nos">Sobre n&oacute;s</a>
+          </li>
+        </ul>
+        <div class="nav-actions">
+          <button id="theme_toggle" class="theme-toggle" type="button" aria-pressed="false">
+            <i class="fa-solid fa-moon"></i>
+            <span class="sr-only">Ativar modo escuro</span>
+          </button>
+          <a href="https://wa.me/5561982714522" class="btn-default desktop-only">Pe&ccedil;a aqui</a>
+        </div>
+        <button id="mobile_btn" aria-label="Abrir menu de navega&ccedil;&atilde;o">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </nav>
+
+      <div id="mobile_menu" aria-hidden="true">
+        <ul id="mobile_nav_list">
+          <li class="nav-item"><a href="#home">In&iacute;cio</a></li>
+          <li class="nav-item"><a href="#menu">Card&aacute;pio</a></li>
+          <li class="nav-item"><a href="#testimonials">Avalia&ccedil;&otilde;es</a></li>
+          <li class="nav-item"><a href="#mapa">Localiza&ccedil;&atilde;o</a></li>
+          <li class="nav-item"><a href="#comunidade">Clube exclusivo</a></li>
+          <li class="nav-item"><a href="#sobre-nos">Sobre n&oacute;s</a></li>
+          <li class="nav-item"><a href="src/cardapio.html">Card&aacute;pio completo</a></li>
+        </ul>
+        <button id="mobile_theme_toggle" class="theme-toggle mobile-only" type="button" aria-pressed="false">
+          <i class="fa-solid fa-moon"></i>
+          <span class="sr-only">Ativar modo escuro</span>
+        </button>
+        <a href="https://wa.me/5561982714522" class="btn-default mobile-only">Pe&ccedil;a aqui</a>
+      </div>
+    </header>
+
+    <main id="content">
+      <section id="home">
+        <div class="shape"></div>
+        <div id="cta">
+          <h1 class="title">
+            Crepe de verdade, com a <span>máxima</span> qualidade!
+          </h1>
+
+          <p class="description">
+            Receitas aut&ecirc;nticas feitas com paix&atilde;o, trazendo o melhor da It&aacute;lia at&eacute; voc&ecirc;.
+          </p>
+
+          <div id="cta_buttons">
+            <a href="src/cardapio.html" class="btn-default">Ver card&aacute;pio</a>
+
+            <a href="tel:+5561982714522" id="phone_button" class="btn-default phone-link">
+              <i class="fa-solid fa-phone"></i>
+              <span>(61) 98271-4522</span>
+            </a>
+          </div>
+
+          <div class="social-media-buttons">
+            <a href="https://wa.me/5561982714522" aria-label="Fale com a M&aacute;ximo Crepes no WhatsApp">
+              <i class="fa-brands fa-whatsapp"></i>
+            </a>
+
+            <a href="https://www.instagram.com/maximo_crepes/" aria-label="Siga @maximo_crepes no Instagram">
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+
+            <a
+              href="https://www.ifood.com.br/delivery/brasilia-df/maximo-crepes---crepes-e-hamburgueres-superquadra-norte-306/a8e8be0c-5c22-4bac-a58d-b3aad31147ca"
+              aria-label="Pe&ccedil;a M&aacute;ximo Crepes pelo iFood"
+            >
+              <i class="fa-solid fa-box-open"></i>
+            </a>
+          </div>
+        </div>
+
+        <div id="banner">
+          <img src="src/images/hero.png" alt="Crepe artesanal servido em prato" />
+        </div>
+      </section>
+
+      <section id="menu">
+
+        <div class="menu-header">
+          <div class="menu-header-copy">
+            <div class="menu-header-title">
+              <span class="menu-header-icon" aria-hidden="true">
+                <i class="fa-solid fa-star"></i>
+              </span>
+              <h3 class="section-subtitle">Queridinhos da galera</h3>
+            </div>
+            <p class="menu-highlight">
+              Os crepes e burgers mais pedidos da M&aacute;ximo chegam com recheios generosos, massa crocante e 5 estrelas
+              garantidas pela clientela que passa por aqui toda semana.
+            </p>
+          </div>
+          <div class="menu-stats" aria-label="Indicadores de popularidade">
+            <div class="menu-stat">
+              <strong>500+</strong>
+              <span>Pedidos semanais</span>
+            </div>
+            <div class="menu-stat">
+              <strong>4 sabores</strong>
+              <span>Favoritos absolutos</span>
+            </div>
+          </div>
+        </div>
+
+        <div id="dishes" class="menu-dishes">
+          <article class="dish">
+            <div class="dish-media">
+              <div class="dish-ribbon">
+                <i class="fa-solid fa-crown" aria-hidden="true"></i>
+                <span>Top 1</span>
+              </div>
+              <img src="src/images/logo.png" class="dish-image" alt="Crepe Bacon Supreme" />
+              <span class="dish-tag">Salgado</span>
+            </div>
+            <div class="dish-content">
+              <h3 class="dish-title">Bacon Supreme</h3>
+              <p class="dish-description">
+                Queijo, bacon, tomate, cheddar, manjeric&atilde;o, or&eacute;gano e borda de queijo.
+              </p>
+              <div class="dish-meta">
+                <div class="dish-rate" aria-label="Avalia&ccedil;&atilde;o 5 estrelas">
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <span>500+ avalia&ccedil;&otilde;es</span>
+                </div>
+                <span class="dish-time">
+                  <i class="fa-solid fa-fire" aria-hidden="true"></i>
+                  Sai da chapa em 6 min
+                </span>
+              </div>
+              <a href="https://wa.me/5561982714522" class="dish-action">
+                <i class="fa-solid fa-cart-plus" aria-hidden="true"></i>
+                Pedir agora
+              </a>
+            </div>
+          </article>
+
+          <article class="dish">
+            <div class="dish-media">
+              <div class="dish-ribbon">
+                <i class="fa-solid fa-crown" aria-hidden="true"></i>
+                <span>Top 2</span>
+              </div>
+              <img src="src/images/logo.png" class="dish-image" alt="Crepe Carne de Sol Especial" />
+              <span class="dish-tag">Regional</span>
+            </div>
+            <div class="dish-content">
+              <h3 class="dish-title">Carne de Sol Especial</h3>
+              <p class="dish-description">
+                Queijo, carne de sol, tomate, milho, cheddar, or&eacute;gano e borda de queijo.
+              </p>
+              <div class="dish-meta">
+                <div class="dish-rate" aria-label="Avalia&ccedil;&atilde;o 5 estrelas">
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <span>480 avalia&ccedil;&otilde;es</span>
+                </div>
+                <span class="dish-time">
+                  <i class="fa-solid fa-leaf" aria-hidden="true"></i>
+                  Ingredientes frescos
+                </span>
+              </div>
+              <a href="https://wa.me/5561982714522" class="dish-action">
+                <i class="fa-solid fa-cart-plus" aria-hidden="true"></i>
+                Pedir agora
+              </a>
+            </div>
+          </article>
+
+          <article class="dish">
+            <div class="dish-media">
+              <div class="dish-ribbon">
+                <i class="fa-solid fa-crown" aria-hidden="true"></i>
+                <span>Top 3</span>
+              </div>
+              <img src="src/images/logo.png" class="dish-image" alt="Crepe Frango Caipira" />
+              <span class="dish-tag">Cl&aacute;ssico</span>
+            </div>
+            <div class="dish-content">
+              <h3 class="dish-title">Frango Caipira</h3>
+              <p class="dish-description">
+                Queijo, frango, bacon, ovo, cheddar, milho, or&eacute;gano e borda de queijo.
+              </p>
+              <div class="dish-meta">
+                <div class="dish-rate" aria-label="Avalia&ccedil;&atilde;o 5 estrelas">
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <span>450 avalia&ccedil;&otilde;es</span>
+                </div>
+                <span class="dish-time">
+                  <i class="fa-solid fa-bolt" aria-hidden="true"></i>
+                  Pronto em 7 min
+                </span>
+              </div>
+              <a href="https://wa.me/5561982714522" class="dish-action">
+                <i class="fa-solid fa-cart-plus" aria-hidden="true"></i>
+                Pedir agora
+              </a>
+            </div>
+          </article>
+
+          <article class="dish">
+            <div class="dish-media">
+              <div class="dish-ribbon">
+                <i class="fa-solid fa-crown" aria-hidden="true"></i>
+                <span>Top 4</span>
+              </div>
+              <img src="src/images/logo.png" class="dish-image" alt="M&aacute;ximo Burger" />
+              <span class="dish-tag">Burger</span>
+            </div>
+            <div class="dish-content">
+              <h3 class="dish-title">M&aacute;ximo Burger</h3>
+              <p class="dish-description">
+                P&atilde;o, maionese, barbecue, duas vezes blend bovino (150 g), queijo, bacon, tomate e alface.
+              </p>
+              <div class="dish-meta">
+                <div class="dish-rate" aria-label="Avalia&ccedil;&atilde;o 5 estrelas">
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <span>420 avalia&ccedil;&otilde;es</span>
+                </div>
+                <span class="dish-time">
+                  <i class="fa-solid fa-gauge-high" aria-hidden="true"></i>
+                  Montagem artesanal
+                </span>
+              </div>
+              <a href="https://wa.me/5561982714522" class="dish-action">
+                <i class="fa-solid fa-cart-plus" aria-hidden="true"></i>
+                Pedir agora
+              </a>
+            </div>
+          </article>
+        </div>
+
+        <div class="menu-footer">
+          <a href="src/cardapio.html" class="menu-button hidden">Card&aacute;pio completo</a>
+          <a href="src/cardapio.html" class="menu-button-desktop">Card&aacute;pio completo</a>
+        </div>
+      </section>
+
+      <section id="testimonials">
+        <img src="src/images/chef.png" id="testimonial_chef" alt="Chef preparando massa de crepe" />
+
+        <div id="testimonials_content">
+          <h2 class="section-title">Avalia&ccedil;&otilde;es</h2>
+          <h3 class="section-subtitle">Clientes apaixonados pelo crepe certo</h3>
+
+          <p class="testimonials-intro">
+            Amor em cada massa, recheios generosos e entrega acolhedora. Descubra por que a galera volta sempre para o
+            nosso quiosque da SQN 306.
+          </p>
+
+          <div class="testimonials-rating" aria-label="Resumo das avalia&ccedil;&otilde;es dos clientes">
+            <div class="rating-score">
+              <span class="rating-value">4,9</span>
+              <div class="rating-stars" aria-hidden="true">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star-half-stroke"></i>
+              </div>
+              <span class="rating-label">M&eacute;dia geral</span>
+            </div>
+
+            <ul class="rating-metrics">
+              <li>
+                <i class="fa-solid fa-comments" aria-hidden="true"></i>
+                <span>500+ avalia&ccedil;&otilde;es no iFood e Google</span>
+              </li>
+              <li>
+                <i class="fa-solid fa-heart" aria-hidden="true"></i>
+                <span>98% recomendam para amigos</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="testimonials-cards">
+            <article class="testimonial-card">
+              <header class="testimonial-header">
+                <img src="src/images/logo.png" class="testimonial-avatar" alt="Avatar da cliente Lu&iacute;sa Lenti" />
+
+                <div class="testimonial-person">
+                  <strong class="testimonial-name">Lu&iacute;sa Lenti</strong>
+                  <span class="testimonial-meta">Cliente fiel da banca</span>
+                </div>
+              </header>
+
+              <p class="testimonial-quote">
+                &ldquo;&Eacute; maravilhoso perceber que o melhor crepe dessa cidade fica numa banquinha na entrada de uma quadra.
+                Simplesmente delicioso, a massa &eacute; perfeita! Sou f&atilde;!&rdquo;
+              </p>
+
+              <div class="testimonial-rating" aria-label="Avalia&ccedil;&atilde;o cinco estrelas">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+              </div>
+            </article>
+
+            <article class="testimonial-card">
+              <header class="testimonial-header">
+                <img src="src/images/logo.png" class="testimonial-avatar" alt="Avatar do cliente Bruno Oli" />
+
+                <div class="testimonial-person">
+                  <strong class="testimonial-name">Bruno Oli</strong>
+                  <span class="testimonial-meta">Entrega sempre pontual</span>
+                </div>
+              </header>
+
+              <p class="testimonial-quote">
+                &ldquo;M&aacute;ximo Crepes &eacute; uma das melhores creperias do Centro-Oeste: lanche com pre&ccedil;os acess&iacute;veis e &oacute;tima
+                qualidade. Muito bom!&rdquo;
+              </p>
+
+              <div class="testimonial-rating" aria-label="Avalia&ccedil;&atilde;o cinco estrelas">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+              </div>
+            </article>
+
+            <article class="testimonial-card">
+              <header class="testimonial-header">
+                <img src="src/images/logo.png" class="testimonial-avatar" alt="Avatar do cliente Cesar Oliveira" />
+
+                <div class="testimonial-person">
+                  <strong class="testimonial-name">Cesar Oliveira</strong>
+                  <span class="testimonial-meta">Cliente via delivery</span>
+                </div>
+              </header>
+
+              <p class="testimonial-quote">
+                &ldquo;Crepe muuuuito bom! Bem recheado, pedi apenas um pelo iFood achando que n&atilde;o seria suficiente, mas foi uma
+                refei&ccedil;&atilde;o completa. Entrega super r&aacute;pida!&rdquo;
+              </p>
+
+              <div class="testimonial-rating" aria-label="Avalia&ccedil;&atilde;o cinco estrelas">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+              </div>
+            </article>
+          </div>
+
+          <footer class="testimonials-footer">
+            <a href="https://wa.me/5561982714522" class="testimonials-action">
+              <i class="fa-solid fa-pen-to-square" aria-hidden="true"></i>
+              Quero deixar minha avalia&ccedil;&atilde;o
+            </a>
+            <div class="testimonials-note" aria-label="Depoimentos de clientes de Bras&iacute;lia">
+              <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+              <div class="note-text">
+                <strong>Bras&iacute;lia confia</strong>
+                <span>Moradores conhecem e indicam.</span>
+              </div>
+            </div>
+          </footer>
+        </div>
+      </section>
+      <section id="mapa" class="localizacao">
+        <div class="localizacao-bloco">
+          <div class="localizacao-info">
+            <span class="localizacao-badge">Venha nos visitar</span>
+            <h2>Estamos no cora&ccedil;&atilde;o de Bras&iacute;lia</h2>
+            <p class="localizacao-texto">
+              Nosso quiosque fica na SQN 306, pertinho de voc&ecirc;. Chegue para um crepe fresquinho, pegue seu pedido
+              com agilidade ou combine a entrega pelo WhatsApp.
+            </p>
+
+            <ul class="localizacao-dados">
+              <li>
+                <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+                <div>
+                  <strong>Endere&ccedil;o</strong>
+                  <span>SQN 306 - Banca de Jornal, Asa Norte &bull; Bras&iacute;lia, DF</span>
+                </div>
+              </li>
+              <li>
+                <i class="fa-solid fa-clock" aria-hidden="true"></i>
+                <div>
+                  <strong>Hor&aacute;rio</strong>
+                  <span>Seg a Sex 17h - 22h &bull; S&aacute;b e Dom 16h - 23h</span>
+                </div>
+              </li>
+              <li>
+                <i class="fa-solid fa-phone-volume" aria-hidden="true"></i>
+                <div>
+                  <strong>Contato</strong>
+                  <a href="https://wa.me/5561982714522" target="_blank" rel="noopener">WhatsApp (61) 98271-4522</a>
+                </div>
+              </li>
+            </ul>
+
+            <div class="localizacao-chips" aria-label="Diferenciais do ponto f&iacute;sico">
+              <span>Retirada express</span>
+              <span>Estacionamento f&aacute;cil</span>
+              <span>Entrega pr&oacute;pria</span>
+            </div>
+
+            <div class="localizacao-acoes">
+              <a
+                class="btn-default localizacao-cta"
+                href="https://www.google.com/maps/dir/?api=1&destination=M%C3%A1ximo+Crepes"
+                target="_blank"
+                rel="noopener"
+              >
+                <i class="fa-solid fa-route" aria-hidden="true"></i>
+                Tra&ccedil;ar rota
+              </a>
+              <a
+                class="localizacao-link"
+                href="https://wa.me/5561982714522"
+                target="_blank"
+                rel="noopener"
+              >
+                <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+                Falar com a gente
+              </a>
+            </div>
+          </div>
+
+          <div class="localizacao-mapa">
+            <div class="localizacao-mapa-frame">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3839.633173673316!2d-47.8882776239287!3d-15.770533122369864!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x935a3bbfecbb897f%3A0x58958b563799f026!2sM%C3%A1ximo%20Crepes!5e0!3m2!1spt-BR!2sbr!4v1747110789031!5m2!1spt-BR!2sbr"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                title="Mapa com a localiza&ccedil;&atilde;o da M&aacute;ximo Crepes"
+              ></iframe>
+            </div>
+            <div class="localizacao-mapa-nota">
+              <i class="fa-solid fa-circle-info" aria-hidden="true"></i>
+              <span>Chegue de metr&ocirc; - Est. 102 Norte fica a 5 minutos de caminhada.</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="comunidade" class="comunidade">
+        <div class="comunidade-wrapper">
+          <div class="comunidade-content">
+            <div class="comunidade-heading">
+              <span class="comunidade-heading-icon" aria-hidden="true">
+                <i class="fa-solid fa-people-group"></i>
+              </span>
+              <h2 class="section-title">Clube M&aacute;ximo</h2>
+            </div>
+            <h3 class="section-subtitle">Nosso grupo para quem vive a rotina da banca</h3>
+            <p class="comunidade-intro">
+              Um ponto de encontro direto com a equipe: novidades, bastidores, cupons e conversas de quem ama crepe de verdade.
+              Junte-se para ficar por dentro de tudo e ajudar a construir novos sabores.
+            </p>
+
+            <ul class="comunidade-benefits" aria-label="Benef&iacute;cios do grupo exclusivo">
+              <li>
+                <i class="fa-solid fa-ticket" aria-hidden="true"></i>
+                <div>
+                  <strong>Ofertas em primeira m&atilde;o</strong>
+                  <span>Receba cupons, combos especiais e avisos antes de todo mundo.</span>
+                </div>
+              </li>
+              <li>
+                <i class="fa-solid fa-headset" aria-hidden="true"></i>
+                <div>
+                  <strong>Atendimento direto</strong>
+                  <span>Combine pedidos, tire d&uacute;vidas e acompanhe novidades em tempo real.</span>
+                </div>
+              </li>
+              <li>
+                <i class="fa-solid fa-bolt" aria-hidden="true"></i>
+                <div>
+                  <strong>Participa&ccedil;&atilde;o ativa</strong>
+                  <span>Ajude a escolher sabores sazonais, eventos e melhorias na banca.</span>
+                </div>
+              </li>
+            </ul>
+
+            <div class="comunidade-actions">
+              <a
+                href="https://chat.whatsapp.com/KA0cJsGEYuZLui806i1MYU"
+                class="btn-default comunidade-cta"
+              >
+                <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+                Entrar na comunidade
+              </a>
+              <span class="comunidade-note">Aberto para clientes e amigos da banca. Chega mais!</span>
+            </div>
+          </div>
+
+          <aside class="comunidade-highlight" aria-label="O que acontece no Clube M&aacute;ximo">
+            <div class="highlight-header">
+              <span class="highlight-title">Dentro do grupo</span>
+              <span class="highlight-tag">Atualiza&ccedil;&otilde;es di&aacute;rias</span>
+            </div>
+            <ul class="highlight-list">
+              <li>
+                <i class="fa-solid fa-bullhorn" aria-hidden="true"></i>
+                Avisos de promo&ccedil;&otilde;es e combos do dia
+              </li>
+              <li>
+                <i class="fa-solid fa-clock" aria-hidden="true"></i>
+                Hor&aacute;rios especiais e comunica&ccedil;&otilde;es de funcionamento
+              </li>
+              <li>
+                <i class="fa-solid fa-gift" aria-hidden="true"></i>
+                Novidades, degustas e spoilers de sabores
+              </li>
+            </ul>
+            <div class="highlight-feed" aria-label="Exemplo de intera&ccedil;&otilde;es recentes">
+              <article class="highlight-message">
+                <span class="highlight-avatar" aria-hidden="true">
+                  <i class="fa-solid fa-bullhorn"></i>
+                </span>
+                <div>
+                  <strong>Equipe M&aacute;ximo &bull; 10h30</strong>
+                  <p>&ldquo;Bom dia, galera! Hoje o combo Nordestino + Doce da Vov&oacute; sai com 15% off at&eacute; 21h.&rdquo;</p>
+                </div>
+              </article>
+              <article class="highlight-message">
+                <span class="highlight-avatar" aria-hidden="true">
+                  <i class="fa-solid fa-clock"></i>
+                </span>
+                <div>
+                  <strong>Equipe M&aacute;ximo &bull; 16h00</strong>
+                  <p>&ldquo;Aviso r&aacute;pido: hoje abriremos 30 min mais cedo para atender a galera do happy hour.&rdquo;</p>
+                </div>
+              </article>
+              <article class="highlight-message">
+                <span class="highlight-avatar" aria-hidden="true">
+                  <i class="fa-solid fa-star"></i>
+                </span>
+                <div>
+                  <strong>Equipe M&aacute;ximo &bull; 21h15</strong>
+                  <p>&ldquo;Chegou novidade! Amanh&atilde; teremos degust do recheio Romeu e Julieta cremoso. Confirma aqui quem vai!&rdquo;</p>
+                </div>
+              </article>
+            </div>
+            <div class="highlight-footer">
+              <span class="highlight-status">
+                <i class="fa-solid fa-users" aria-hidden="true"></i>
+                150 clientes conectados
+              </span>
+              <span class="highlight-status">
+                <i class="fa-solid fa-clock" aria-hidden="true"></i>
+                Avisos em tempo real
+              </span>
+              <span class="highlight-status">
+                <i class="fa-solid fa-gift" aria-hidden="true"></i>
+                Sorteios mensais
+              </span>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section id="sobre-nos" class="sobre-nos">
+        <div class="sobre-imagem">
+          <img src="src/images/doiscrepe.jpg" alt="Dois crepes servidos na loja M&aacute;ximo Crepes" />
+          <div class="sobre-experiencia" aria-hidden="true">
+            <span>Desde</span>
+            <strong>2002</strong>
+          </div>
+        </div>
+
+        <div class="sobre-texto">
+          <span class="sobre-badge">Tradi&ccedil;&atilde;o que abra&ccedil;a</span>
+          <h2>Sobre n&oacute;s</h2>
+          <p class="sobre-intro">
+            Somos uma fam&iacute;lia h&aacute; mais de 10 anos entregando o melhor em custo-benef&iacute;cio, carinho e qualidade.
+            Cada crepe sai da nossa chapa com ingredientes frescos, receitas autorais e o toque acolhedor que
+            transformou a M&aacute;ximo Crepes em refer&ecirc;ncia em Bras&iacute;lia.
+          </p>
+
+          <ul class="sobre-lista">
+            <li>
+              <i class="fa-solid fa-utensils" aria-hidden="true"></i>
+              <div>
+                <h3>Receitas autorais</h3>
+                <p>Sabores exclusivos criados pela nossa fam&iacute;lia para surpreender em cada mordida.</p>
+              </div>
+            </li>
+            <li>
+              <i class="fa-solid fa-leaf" aria-hidden="true"></i>
+              <div>
+                <h3>Ingredientes frescos</h3>
+                <p>Selecionados diariamente para manter o sabor e a textura que voc&ecirc; ama.</p>
+              </div>
+            </li>
+            <li>
+              <i class="fa-solid fa-people-group" aria-hidden="true"></i>
+              <div>
+                <h3>Ambiente acolhedor</h3>
+                <p>Um ponto de encontro para quem busca uma experi&ecirc;ncia leve, deliciosa e afetiva.</p>
+              </div>
+            </li>
+          </ul>
+
+          <div class="sobre-destaques" aria-label="Nossos n&uacute;meros">
+            <div class="sobre-destaque">
+              <strong>10+</strong>
+              <span>Anos de hist&oacute;ria</span>
+            </div>
+            <div class="sobre-destaque">
+              <strong>40</strong>
+              <span>Sabores no card&aacute;pio</span>
+            </div>
+            <div class="sobre-destaque">
+              <strong>5?</strong>
+              <span>Avalia&ccedil;&atilde;o dos clientes</span>
+            </div>
+          </div>
+
+          <a href="https://wa.me/5561982714522" class="btn-default sobre-cta">Conhe&ccedil;a nossos sabores</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="rodape">
+      <p>
+        &copy; 2025 - M&aacute;ximo Crepes. Todos os direitos reservados. <br />
+        CNPJ 21.193.217/0001-35 &bull; SQN 306 Banca de Jornal - Asa Norte, DF.
+      </p>
+    </footer>
+
+    <script src="src/javascript/script.js"></script>
+  </body>
+</html>

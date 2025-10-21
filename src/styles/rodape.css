@@ -1,0 +1,24 @@
+.rodape {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: clamp(32px, 6vw, 48px) clamp(3%, 5vw, 6%);
+  background-color: var(--color-primary-2);
+  color: var(--color-neutral-0);
+  text-align: center;
+  margin-top: clamp(48px, 8vw, 72px);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.rodape p {
+  font-size: clamp(0.95rem, 2.2vw, 1.05rem);
+  font-weight: 600;
+  line-height: 1.6;
+  max-width: min(100%, var(--cardapio-content-max, 1280px));
+  margin: 0 auto;
+}
+
+body[data-theme='dark'] .rodape {
+  background-color: var(--color-primary-2);
+}
