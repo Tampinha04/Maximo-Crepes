@@ -54,7 +54,8 @@
             <i class="fa-solid fa-moon"></i>
             <span class="sr-only">Ativar modo escuro</span>
           </button>
-          <a href="https://wa.me/5561982714522" class="btn-default desktop-only">Pe&ccedil;a aqui</a>
+          <a href="https://api.whatsapp.com/send?phone=5561982714522&text=Ol%C3%A1!%20%F0%9F%98%8B%20Quero%20fazer%20meu%20pedido%20e%20aproveitar%20as%20del%C3%ADcias%20do%20M%C3%A1ximo%20Crepes!
+" class="btn-default desktop-only">Pe&ccedil;a aqui</a>
         </div>
         <button id="mobile_btn" aria-label="Abrir menu de navega&ccedil;&atilde;o">
           <i class="fa-solid fa-bars"></i>
@@ -76,7 +77,8 @@
           <i class="fa-solid fa-moon"></i>
           <span class="sr-only">Ativar modo escuro</span>
         </button>
-        <a href="https://wa.me/5561982714522" class="btn-default mobile-only">Pe&ccedil;a aqui</a>
+        <a href="https://api.whatsapp.com/send?phone=5561982714522&text=Ol%C3%A1!%20%F0%9F%98%8B%20Quero%20fazer%20meu%20pedido%20e%20aproveitar%20as%20del%C3%ADcias%20do%20M%C3%A1ximo%20Crepes!
+" class="btn-default mobile-only">Pe&ccedil;a aqui</a>
       </div>
     </header>
     <main>
@@ -89,7 +91,8 @@
             Escolha seus favoritos entre crepes salgados, doces e hamb&uacute;rgueres artesanais feitos na hora.
           </p>
           <div class="menu-hero__actions">
-            <a href="https://wa.me/5561982714522" class="btn-default">
+            <a href="https://api.whatsapp.com/send?phone=5561982714522&text=Ol%C3%A1!%20%F0%9F%98%8B%20Quero%20fazer%20meu%20pedido%20e%20aproveitar%20as%20del%C3%ADcias%20do%20M%C3%A1ximo%20Crepes!
+" class="btn-default">
               <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
               Fazer pedido agora
             </a>
@@ -102,12 +105,29 @@
       </section>
 
       <nav class="menu-tabs menu-tabs--floating" aria-label="Categorias do card&aacute;pio">
-        <button type="button" class="menu-tab active" data-target="#crepes-salgados">Crepes salgados</button>
-        <button type="button" class="menu-tab" data-target="#crepes-especiais">Crepes especiais</button>
-        <button type="button" class="menu-tab" data-target="#crepes-vegetarianos">Crepes vegetarianos</button>
-        <button type="button" class="menu-tab" data-target="#crepes-doces">Crepes doces</button>
-        <button type="button" class="menu-tab" data-target="#hamburgueres-tradicionais">Hamb&uacute;rgueres tradicionais</button>
-        <button type="button" class="menu-tab" data-target="#hamburgueres-artesanais">Hamb&uacute;rgueres artesanais</button>
+        <button
+          type="button"
+          class="menu-tabs__toggle"
+          aria-expanded="false"
+          aria-controls="menu-tabs-panel"
+        >
+          <span class="menu-tabs__toggle-label">Explorar categorias</span>
+          <i class="fa-solid fa-bars" aria-hidden="true"></i>
+        </button>
+        <div class="menu-tabs__overlay" hidden></div>
+        <div
+          id="menu-tabs-panel"
+          class="menu-tabs__panel"
+          role="group"
+          aria-label="Categorias dispon&iacute;veis"
+        >
+          <button type="button" class="menu-tab active" data-target="#crepes-salgados">Crepes salgados</button>
+          <button type="button" class="menu-tab" data-target="#crepes-especiais">Crepes especiais</button>
+          <button type="button" class="menu-tab" data-target="#crepes-vegetarianos">Crepes vegetarianos</button>
+          <button type="button" class="menu-tab" data-target="#crepes-doces">Crepes doces</button>
+          <button type="button" class="menu-tab" data-target="#hamburgueres-tradicionais">Hamb&uacute;rgueres tradicionais</button>
+          <button type="button" class="menu-tab" data-target="#hamburgueres-artesanais">Hamb&uacute;rgueres artesanais</button>
+        </div>
       </nav>
 
       <section id="menu-principal" class="menu-sections">
@@ -373,7 +393,7 @@
           <div class="menu-grid">
             <article class="menu-card">
               <figure class="menu-card__media">
-                <img src="images/logo.png" alt="Ilustra&ccedil;&atilde;o do crepe Vegetariano" loading="lazy" />
+                <img src="images/cardapio/vegetariano.png" alt="Ilustra&ccedil;&atilde;o do crepe Vegetariano" loading="lazy" />
               </figure>
               <div class="menu-card__body">
                 <header class="menu-card__header">

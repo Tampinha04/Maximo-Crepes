@@ -251,6 +251,19 @@ body[data-theme='dark'] .sobre-destaque {
   font-weight: 800;
   color: var(--color-primary-6);
   line-height: 1;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3em;
+}
+
+.sobre-rating-star {
+  font-size: 0.55em;
+  color: var(--color-primary-7);
+  text-shadow: 0 0 8px rgba(255, 196, 0, 0.35);
+}
+
+body[data-theme='dark'] .sobre-rating-star {
+  color: var(--color-primary-7);
 }
 
 .sobre-destaque span {

@@ -57,13 +57,194 @@
   align-items: center;
   justify-content: flex-end;
   width: 60%;
+  perspective: 1200px;
+  transform-style: preserve-3d;
+  position: relative;
   z-index: 1;
 }
 
 #banner img {
   max-height: 640px;
   width: auto;
+  position: relative;
+  z-index: 1;
   animation: float-x 11s ease-in-out infinite;
+}
+
+.banner-emoji {
+  position: absolute;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 68px;
+  height: 68px;
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.82);
+  color: var(--color-primary-6);
+  font-size: 1.75rem;
+  box-shadow: 0 18px 36px rgba(164, 208, 0, 0.25);
+  backdrop-filter: blur(8px);
+  pointer-events: none;
+  z-index: 2;
+  animation: emoji-float 7.5s ease-in-out infinite;
+}
+
+.banner-emoji i {
+  font-size: 1.4em;
+}
+
+.banner-emoji.emoji-star {
+  top: 10%;
+  right: 62%;
+  animation-delay: -1.8s;
+}
+
+.banner-emoji.emoji-heart {
+  bottom: 12%;
+  right: 56%;
+  color: var(--color-primary-8);
+  box-shadow: 0 16px 34px rgba(229, 57, 53, 0.22);
+  animation-duration: 6.5s;
+}
+
+.banner-emoji.emoji-crepe {
+  top: 48%;
+  right: 6%;
+  font-size: 2rem;
+  animation-duration: 8s;
+  animation-delay: -3s;
+}
+
+body[data-theme='dark'] .banner-emoji {
+  background: rgba(27, 31, 35, 0.76);
+  box-shadow: 0 18px 36px rgba(0, 0, 0, 0.45);
+}
+
+.banner-chip {
+  position: absolute;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 18px;
+  border-radius: 18px;
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.98), rgba(255, 255, 255, 0.78));
+  color: var(--color-neutral-1);
+  font-size: 0.88rem;
+  font-weight: 600;
+  box-shadow: 0 20px 38px rgba(164, 208, 0, 0.25), inset 0 3px 8px rgba(255, 255, 255, 0.65);
+  border: 1px solid rgba(164, 208, 0, 0.4);
+  backdrop-filter: blur(6px);
+  transform: rotateX(14deg) rotateY(-18deg) translateZ(40px);
+  transform-origin: center;
+  animation: chip-float 9s ease-in-out infinite;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.banner-chip::after {
+  content: '';
+  position: absolute;
+  inset: 4px;
+  border-radius: inherit;
+  background: linear-gradient(145deg, rgba(164, 208, 0, 0.18), rgba(140, 214, 52, 0.08));
+  opacity: 0.9;
+  z-index: -1;
+}
+
+.banner-chip i {
+  font-size: 1.1rem;
+  color: var(--color-primary-6);
+}
+
+.banner-chip span {
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.banner-chip.chip-delivery {
+  top: 6%;
+  right: 8%;
+  animation-delay: -1.4s;
+}
+
+.banner-chip.chip-chef {
+  bottom: 12%;
+  left: 2%;
+  transform: rotateX(16deg) rotateY(22deg) translateZ(28px);
+  animation: chip-float-alt 8s ease-in-out infinite;
+  box-shadow: 0 22px 40px rgba(255, 196, 0, 0.22), inset 0 3px 8px rgba(255, 255, 255, 0.55);
+  border-color: rgba(255, 196, 0, 0.36);
+}
+
+.banner-chip.chip-rating {
+  top: 58%;
+  right: 20%;
+  transform: rotateX(18deg) rotateY(-12deg) translateZ(32px);
+  animation: chip-float 7s ease-in-out infinite;
+  animation-delay: -2.6s;
+}
+
+body[data-theme='dark'] .banner-chip {
+  background: linear-gradient(145deg, rgba(27, 31, 35, 0.96), rgba(27, 31, 35, 0.78));
+  color: rgba(241, 245, 249, 0.95);
+  border-color: rgba(148, 197, 33, 0.35);
+  box-shadow: 0 24px 44px rgba(0, 0, 0, 0.55), inset 0 2px 6px rgba(255, 255, 255, 0.06);
+}
+
+body[data-theme='dark'] .banner-chip::after {
+  background: linear-gradient(145deg, rgba(148, 197, 33, 0.18), rgba(90, 124, 26, 0.12));
+}
+
+@keyframes emoji-float {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  45% {
+    transform: translate3d(0, -18px, 0) scale(1.04);
+  }
+  70% {
+    transform: translate3d(0, 6px, 0) scale(0.98);
+  }
+}
+
+@keyframes chip-float {
+  0%,
+  100% {
+    transform: rotateX(14deg) rotateY(-18deg) translateZ(40px) translateY(0);
+  }
+  40% {
+    transform: rotateX(10deg) rotateY(-14deg) translateZ(48px) translateY(-14px);
+  }
+  70% {
+    transform: rotateX(18deg) rotateY(-20deg) translateZ(36px) translateY(10px);
+  }
+}
+
+@keyframes chip-float-alt {
+  0%,
+  100% {
+    transform: rotateX(16deg) rotateY(22deg) translateZ(28px) translateY(0);
+  }
+  45% {
+    transform: rotateX(12deg) rotateY(18deg) translateZ(36px) translateY(-18px);
+  }
+  75% {
+    transform: rotateX(18deg) rotateY(26deg) translateZ(24px) translateY(8px);
+  }
+}
+
+@keyframes emoji-float {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  45% {
+    transform: translate3d(0, -18px, 0) scale(1.04);
+  }
+  70% {
+    transform: translate3d(0, 6px, 0) scale(0.98);
+  }
 }
 
 .shape {
