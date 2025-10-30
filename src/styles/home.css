@@ -298,3 +298,11 @@ body[data-theme='dark'] .banner-chip::after {
     font-size: 2.2rem;
   }
 }
+
+@media (min-width: 1171px) and (prefers-reduced-motion: reduce) {
+  #home .banner-chip,
+  #home .banner-emoji {
+    animation-duration: 7s !important;
+    animation-iteration-count: infinite !important;
+  }
+}

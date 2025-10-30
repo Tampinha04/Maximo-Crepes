@@ -1,5 +1,8 @@
-﻿$(document).ready(function () {
+﻿// script.js — Máximo Crepes (corrigido UTF-8, FA6/FA5, acessibilidade)
+
+$(document).ready(function () {
   const THEME_STORAGE_KEY = 'maximo-crepes-theme';
+
   const $body = $('body');
   const $mobileMenu = $('#mobile_menu');
   const $mobileToggleButton = $('#mobile_btn');
@@ -8,35 +11,41 @@
   const $themeToggles = $('#theme_toggle, #mobile_theme_toggle');
   const $menuButton = $('.menu-button');
   const $dishesSection = $('#dishes');
+
   const $menuTabs = $('.menu-tab');
   const $menuCategories = $('.menu-category');
   const $menuTabsContainer = $('.menu-tabs');
   const $menuTabsPanel = $('.menu-tabs__panel');
   const $menuTabsToggle = $('.menu-tabs__toggle');
   const $menuTabsOverlay = $('.menu-tabs__overlay');
+
   let currentActiveMenuTab = null;
+
   const sections = $('section');
   const anchoredSections = sections.filter(function () {
     const id = $(this).attr('id');
     return id && $(`.nav-item a[href="#${id}"]`).length;
   });
+
   const prefersDarkScheme = window.matchMedia
     ? window.matchMedia('(prefers-color-scheme: dark)')
     : null;
   const reduceMotionQuery = window.matchMedia
     ? window.matchMedia('(prefers-reduced-motion: reduce)')
     : null;
-  const mobileTabsQuery = window.matchMedia ? window.matchMedia('(max-width: 768px)') : null;
+  const mobileTabsQuery = window.matchMedia
+    ? window.matchMedia('(max-width: 768px)')
+    : null;
+
   const hasScrollReveal = typeof ScrollReveal === 'function';
   const shouldUseScrollReveal =
     hasScrollReveal &&
     ($('#home').length || $('.dish').length || $('#testimonial_chef').length || $('.feedback').length);
   const scrollReveal = shouldUseScrollReveal ? ScrollReveal() : null;
 
+  // ---------- Navegação e botões ----------
   function setActiveNavigation() {
-    if (!anchoredSections.length) {
-      return;
-    }
+    if (!anchoredSections.length) return;
 
     const scrollPosition = $(window).scrollTop() + 110;
     $('.nav-item').removeClass('active');
@@ -45,7 +54,6 @@
       const $section = $(anchoredSections[index]);
       const sectionTop = $section.offset().top;
       const sectionId = $section.attr('id');
-
       if (scrollPosition >= sectionTop) {
         $(`.nav-item a[href="#${sectionId}"]`).parent().addClass('active');
         break;
@@ -54,18 +62,11 @@
   }
 
   function toggleMenuButtonVisibility() {
-    if ($dishesSection.length === 0 || $menuButton.length === 0) {
-      return;
-    }
+    if ($dishesSection.length === 0 || $menuButton.length === 0) return;
 
     const rect = $dishesSection[0].getBoundingClientRect();
     const isVisible = rect.top <= window.innerHeight && rect.bottom >= 0;
-
-    if (isVisible) {
-      $menuButton.removeClass('hidden');
-    } else {
-      $menuButton.addClass('hidden');
-    }
+    $menuButton.toggleClass('hidden', !isVisible);
   }
 
   function getMenuCategoryOffset() {
@@ -73,39 +74,28 @@
       .getComputedStyle(document.documentElement)
       .getPropertyValue('--menu-category-offset');
     const numericValue = parseInt(rawValue, 10);
-
-    if (Number.isNaN(numericValue)) {
-      return 120;
-    }
-
-    return numericValue;
+    return Number.isNaN(numericValue) ? 120 : numericValue;
   }
 
+  // ---------- Abas do cardápio (tabs/dropdown) ----------
   function isDropdownTabsMode() {
-    if (!$menuTabsToggle.length) {
-      return false;
-    }
-
+    if (!$menuTabsToggle.length) return false;
     if (mobileTabsQuery && typeof mobileTabsQuery.matches === 'boolean') {
       return mobileTabsQuery.matches;
     }
-
     return $menuTabsToggle.is(':visible');
   }
 
   function setMenuTabsOpenState(isOpen) {
-    if (!$menuTabsContainer.length || !$menuTabsToggle.length) {
-      return;
-    }
+    if (!$menuTabsContainer.length || !$menuTabsToggle.length) return;
 
-    const isDropdownMode = isDropdownTabsMode();
-    const shouldOpen = Boolean(isOpen) && isDropdownMode;
+    const shouldOpen = Boolean(isOpen) && isDropdownTabsMode();
 
     $menuTabsContainer.toggleClass('is-open', shouldOpen);
     $menuTabsToggle.attr('aria-expanded', shouldOpen);
 
     if ($menuTabsPanel.length) {
-      if (isDropdownMode) {
+      if (isDropdownTabsMode()) {
         $menuTabsPanel.attr('aria-hidden', !shouldOpen);
       } else {
         $menuTabsPanel.removeAttr('aria-hidden');
@@ -121,52 +111,25 @@
     }
   }
 
-  function openMenuTabs() {
-    setMenuTabsOpenState(true);
-  }
-
-  function closeMenuTabs() {
-    setMenuTabsOpenState(false);
-  }
+  function openMenuTabs()  { setMenuTabsOpenState(true);  }
+  function closeMenuTabs() { setMenuTabsOpenState(false); }
 
   function toggleMenuTabs() {
-    if (!$menuTabsContainer.length || !$menuTabsToggle.length || !isDropdownTabsMode()) {
-      return;
-    }
-
+    if (!$menuTabsContainer.length || !$menuTabsToggle.length || !isDropdownTabsMode()) return;
     setMenuTabsOpenState(!$menuTabsContainer.hasClass('is-open'));
   }
 
-  if (mobileTabsQuery) {
-    const handleTabsModeChange = function () {
-      setMenuTabsOpenState(false);
-    };
-
-    if (typeof mobileTabsQuery.addEventListener === 'function') {
-      mobileTabsQuery.addEventListener('change', handleTabsModeChange);
-    } else if (typeof mobileTabsQuery.addListener === 'function') {
-      mobileTabsQuery.addListener(handleTabsModeChange);
-    }
-  }
-
   function centerMenuTab($tab) {
-    if (!$tab || !$tab.length) {
-      return;
-    }
+    if (!$tab || !$tab.length) return;
 
     const $scrollContainer = $tab.closest('.menu-tabs__panel').length
       ? $tab.closest('.menu-tabs__panel')
       : $tab.closest('.menu-tabs');
 
-    if (!$scrollContainer.length) {
-      return;
-    }
+    if (!$scrollContainer.length) return;
 
     const container = $scrollContainer[0];
-
-    if (!container || container.scrollWidth <= container.clientWidth) {
-      return;
-    }
+    if (!container || container.scrollWidth <= container.clientWidth) return;
 
     const tab = $tab[0];
     const containerRect = container.getBoundingClientRect();
@@ -177,6 +140,7 @@
       container.scrollLeft -
       containerRect.width / 2 +
       tabRect.width / 2;
+
     const maxScrollLeft = Math.max(0, container.scrollWidth - container.clientWidth);
     const nextScrollLeft = Math.min(maxScrollLeft, Math.max(0, offset));
     const shouldReduceMotion = Boolean(reduceMotionQuery && reduceMotionQuery.matches);
@@ -186,11 +150,7 @@
       return;
     }
 
-    if (
-      !shouldReduceMotion &&
-      typeof $scrollContainer.stop === 'function' &&
-      typeof $scrollContainer.animate === 'function'
-    ) {
+    if (!shouldReduceMotion && typeof $scrollContainer.stop === 'function' && typeof $scrollContainer.animate === 'function') {
       $scrollContainer.stop(true, false).animate({ scrollLeft: nextScrollLeft }, 240);
       return;
     }
@@ -199,17 +159,14 @@
   }
 
   function setActiveMenuTab() {
-    if (!$menuTabs.length || !$menuCategories.length) {
-      return null;
-    }
+    if (!$menuTabs.length || !$menuCategories.length) return null;
 
     const scrollPosition = $(window).scrollTop() + getMenuCategoryOffset();
     let activeId = null;
 
-    for (let index = $menuCategories.length - 1; index >= 0; index -= 1) {
-      const $category = $($menuCategories[index]);
+    for (let i = $menuCategories.length - 1; i >= 0; i -= 1) {
+      const $category = $($menuCategories[i]);
       const categoryTop = $category.offset().top;
-
       if (scrollPosition >= categoryTop) {
         activeId = $category.attr('id');
         break;
@@ -228,10 +185,10 @@
     } else {
       currentActiveMenuTab = null;
     }
-
     return activeId;
   }
 
+  // ---------- Tema claro/escuro ----------
   function updateThemeToggleState(isDark) {
     $themeToggles.each(function () {
       const $toggle = $(this);
@@ -242,6 +199,7 @@
       $toggle.toggleClass('is-dark', isDark);
 
       if ($icon.length) {
+        // FA6: fa-sun / fa-moon; (mantém compatível)
         $icon.toggleClass('fa-moon', !isDark);
         $icon.toggleClass('fa-sun', isDark);
       }
@@ -270,7 +228,6 @@
 
   function initTheme() {
     const storedTheme = getStoredTheme();
-
     if (storedTheme) {
       applyTheme(storedTheme);
     } else {
@@ -279,26 +236,35 @@
     }
   }
 
-  function closeMobileMenu() {
-    $mobileMenu.removeClass('ativo').attr('aria-hidden', true);
-    $mobileToggleIcon.removeClass('fa-x');
-    $mobileToggleButton.attr('aria-label', 'Abrir menu de navegaÃ§Ã£o');
+  // ---------- Menu mobile ----------
+  function setMobileIcon(open) {
+    // Remove variações e aplica a que existir no seu projeto
+    $mobileToggleIcon.removeClass('fa-x fa-xmark fa-times');
+    // FA6
+    if ($mobileToggleIcon.length && typeof $mobileToggleIcon.addClass === 'function') {
+      $mobileToggleIcon.toggleClass('fa-xmark', open);
+      // fallback FA5
+      $mobileToggleIcon.toggleClass('fa-times', open && !$mobileToggleIcon.hasClass('fa-xmark'));
+    }
   }
 
+  function closeMobileMenu() {
+    $mobileMenu.removeClass('ativo').attr('aria-hidden', true);
+    setMobileIcon(false);
+    $mobileToggleButton.attr('aria-label', 'Abrir menu de navegação');
+  }
+
+  // Init tema
   initTheme();
 
   if (prefersDarkScheme) {
     if (typeof prefersDarkScheme.addEventListener === 'function') {
       prefersDarkScheme.addEventListener('change', function (event) {
-        if (!getStoredTheme()) {
-          applyTheme(event.matches ? 'dark' : 'light', { persist: false });
-        }
+        if (!getStoredTheme()) applyTheme(event.matches ? 'dark' : 'light', { persist: false });
       });
     } else if (typeof prefersDarkScheme.addListener === 'function') {
       prefersDarkScheme.addListener(function (event) {
-        if (!getStoredTheme()) {
-          applyTheme(event.matches ? 'dark' : 'light', { persist: false });
-        }
+        if (!getStoredTheme()) applyTheme(event.matches ? 'dark' : 'light', { persist: false });
       });
     }
   }
@@ -310,41 +276,28 @@
 
   $mobileToggleButton.on('click', function () {
     const willOpen = !$mobileMenu.hasClass('ativo');
-
     $mobileMenu.toggleClass('ativo', willOpen).attr('aria-hidden', !willOpen);
-    $mobileToggleIcon.toggleClass('fa-x', willOpen);
-    $mobileToggleButton.attr(
-      'aria-label',
-      willOpen ? 'Fechar menu de navegaÃ§Ã£o' : 'Abrir menu de navegaÃ§Ã£o'
-    );
+    setMobileIcon(willOpen);
+    $mobileToggleButton.attr('aria-label', willOpen ? 'Fechar menu de navegação' : 'Abrir menu de navegação');
   });
 
   $mobileNavLinks.on('click', function (event) {
     const target = $(this).attr('href');
-
     if (!target || target === '#') {
       closeMobileMenu();
       return;
     }
-
     if (!target.startsWith('#')) {
       closeMobileMenu();
       return;
     }
-
     event.preventDefault();
-
     const $targetElement = $(target);
-
     if ($targetElement.length) {
       $('html, body').animate(
-        {
-          scrollTop: $targetElement.offset().top - 80,
-        },
+        { scrollTop: $targetElement.offset().top - 80 },
         500,
-        function () {
-          closeMobileMenu();
-        }
+        function () { closeMobileMenu(); }
       );
     }
   });
@@ -353,10 +306,7 @@
     const $tab = $(this);
     const target = $tab.data('target');
     const usingDropdown = isDropdownTabsMode();
-
-    if (!target) {
-      return;
-    }
+    if (!target) return;
 
     const $targetSection = $(target);
     const targetId = typeof target === 'string' ? target.replace('#', '') : null;
@@ -365,7 +315,6 @@
       const scrollOffset = Math.max(0, getMenuCategoryOffset() - 24);
       const destination = Math.max(0, $targetSection.offset().top - scrollOffset);
       const shouldReduceMotion = Boolean(reduceMotionQuery && reduceMotionQuery.matches);
-
       if (shouldReduceMotion) {
         window.scrollTo({ top: destination, left: 0, behavior: 'auto' });
       } else {
@@ -380,17 +329,24 @@
 
     if (usingDropdown) {
       closeMenuTabs();
-
-      if ($menuTabsToggle.length) {
-        $menuTabsToggle.trigger('focus');
-      }
+      if ($menuTabsToggle.length) $menuTabsToggle.trigger('focus');
     }
   });
 
-  $(window).on('scroll', function () {
+  // ---------- Eventos de janela (com rAF-throttle leve) ----------
+  let scrollScheduled = false;
+  function onScrollRaf() {
+    scrollScheduled = false;
     setActiveNavigation();
     toggleMenuButtonVisibility();
     setActiveMenuTab();
+  }
+
+  $(window).on('scroll', function () {
+    if (!scrollScheduled) {
+      scrollScheduled = true;
+      (window.requestAnimationFrame || setTimeout)(onScrollRaf, 16);
+    }
   });
 
   $(window).on('resize orientationchange', function () {
@@ -414,18 +370,17 @@
   $(document).on('keydown', function (event) {
     if (event.key === 'Escape' && $menuTabsContainer.hasClass('is-open') && isDropdownTabsMode()) {
       closeMenuTabs();
-
-      if ($menuTabsToggle.length) {
-        $menuTabsToggle.trigger('focus');
-      }
+      if ($menuTabsToggle.length) $menuTabsToggle.trigger('focus');
     }
   });
 
+  // ---------- Estado inicial ----------
   setMenuTabsOpenState(false);
   setActiveNavigation();
   toggleMenuButtonVisibility();
   setActiveMenuTab();
 
+  // ---------- ScrollReveal (se disponível) ----------
   if (scrollReveal) {
     if (typeof scrollReveal.clean === 'function') {
       scrollReveal.clean(
@@ -434,101 +389,38 @@
     }
 
     scrollReveal.reveal('#cta', {
-      origin: 'left',
-      duration: 1600,
-      distance: '18%',
+      origin: 'left', duration: 1600, distance: '18%',
       easing: 'cubic-bezier(0.22, 1, 0.36, 1)',
     });
 
     scrollReveal.reveal('.menu-header', {
-      origin: 'bottom',
-      duration: 1400,
-      distance: '40px',
+      origin: 'bottom', duration: 1400, distance: '40px',
       easing: 'cubic-bezier(0.33, 1, 0.68, 1)',
     });
 
     scrollReveal.reveal('.menu-stat', {
-      origin: 'bottom',
-      duration: 1400,
-      distance: '35px',
-      interval: 120,
+      origin: 'bottom', duration: 1400, distance: '35px', interval: 120,
       easing: 'cubic-bezier(0.33, 1, 0.68, 1)',
     });
 
     scrollReveal.reveal('.dish', {
-      origin: 'bottom',
-      duration: 1500,
-      distance: '45px',
-      scale: 0.96,
-      interval: 140,
+      origin: 'bottom', duration: 1500, distance: '45px', scale: 0.96, interval: 140,
       easing: 'cubic-bezier(0.33, 1, 0.68, 1)',
     });
 
     scrollReveal.reveal('.menu-card', {
-      origin: 'bottom',
-      duration: 1450,
-      distance: '42px',
-      scale: 0.97,
-      interval: 120,
+      origin: 'bottom', duration: 1450, distance: '42px', scale: 0.97, interval: 120,
       easing: 'cubic-bezier(0.33, 1, 0.68, 1)',
     });
 
     scrollReveal.reveal('.localizacao-bloco', {
-      origin: 'left',
-      duration: 1600,
-      distance: '40px',
+      origin: 'left', duration: 1600, distance: '40px',
       easing: 'cubic-bezier(0.22, 1, 0.36, 1)',
     });
 
     scrollReveal.reveal('.localizacao-mapa', {
-      origin: 'right',
-      duration: 1500,
-      distance: '40px',
-      easing: 'cubic-bezier(0.22, 1, 0.36, 1)',
-      delay: 120,
-    });
-
-    scrollReveal.reveal('.localizacao-mapa-nota', {
-      origin: 'bottom',
-      duration: 1400,
-      distance: '30px',
-      delay: 200,
-    });
-
-    scrollReveal.reveal('.sobre-nos .sobre-imagem', {
-      origin: 'left',
-      duration: 1500,
-      distance: '40px',
-      easing: 'cubic-bezier(0.33, 1, 0.68, 1)',
-    });
-
-    scrollReveal.reveal('.sobre-nos .sobre-texto', {
-      origin: 'right',
-      duration: 1500,
-      distance: '40px',
-      easing: 'cubic-bezier(0.33, 1, 0.68, 1)',
-      delay: 120,
-    });
-
-    scrollReveal.reveal('.sobre-destaque', {
-      origin: 'bottom',
-      duration: 1200,
-      distance: '30px',
-      interval: 100,
-    });
-
-    scrollReveal.reveal('#testimonial_chef', {
-      origin: 'left',
-      duration: 1200,
-      distance: '20%',
-    });
-
-    scrollReveal.reveal('.feedback', {
-      origin: 'right',
-      duration: 1200,
-      distance: '18%',
-      interval: 120,
+      origin: 'right', duration: 1500, distance: '40px',
+      easing: 'cubic-bezier(0.22, 1, 0.36, 1)', delay: 120,
     });
   }
 });
-

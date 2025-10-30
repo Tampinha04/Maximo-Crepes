@@ -114,12 +114,10 @@ body[data-theme='dark'] {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
+  #home .banner-emoji,
+  #home .banner-chip {
+    animation-duration: 7s !important;
+    animation-iteration-count: infinite !important;
   }
 }
 
