@@ -1,0 +1,870 @@
+﻿<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Card&aacute;pio completo da M&aacute;ximo Crepes: crepes salgados, especiais, vegetarianos, doces e hamb&uacute;rgueres artesanais preparados com ingredientes selecionados."
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+      integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <link rel="stylesheet" href="styles/styles.css" />
+    <link rel="stylesheet" href="styles/cardapio.css" />
+    <link rel="icon" href="images/logo.png" type="image/png" />
+    <title>Card&aacute;pio | M&aacute;ximo Crepes</title>
+  </head>
+  <body class="cardapio-page" data-theme="light">
+    <div id="page_preloader" role="status" aria-live="polite">
+      <div class="preloader-core">
+        <span class="preloader-spinner" aria-hidden="true"></span>
+        <strong>Carregando M&aacute;ximo Crepes</strong>
+        <p>Preparando seu card&aacute;pio completo...</p>
+      </div>
+    </div>
+    <header class="site-header">
+      <nav id="navbar">
+        <a href="../index.html#home" class="nav-logo" aria-label="Ir para a p&aacute;gina inicial">
+          <img src="images/logo.png" alt="Logotipo M&aacute;ximo Crepes" />
+        </a>
+        <ul id="nav_list">
+          <li class="nav-item">
+            <a href="../index.html#home">In&iacute;cio</a>
+          </li>
+          <li class="nav-item active">
+            <a href="#cardapio-hero" aria-current="page">Card&aacute;pio</a>
+          </li>
+          <li class="nav-item">
+            <a href="../index.html#testimonials">Avalia&ccedil;&otilde;es</a>
+          </li>
+          <li class="nav-item">
+            <a href="../index.html#mapa">Localiza&ccedil;&atilde;o</a>
+          </li>
+          <li class="nav-item">
+            <a href="../index.html#comunidade">Clube exclusivo</a>
+          </li>
+          <li class="nav-item">
+            <a href="../index.html#sobre-nos">Sobre n&oacute;s</a>
+          </li>
+        </ul>
+        <div class="nav-actions">
+          <button id="theme_toggle" class="theme-toggle" type="button" aria-pressed="false">
+            <span class="theme-toggle__icon" aria-hidden="true">
+              <span class="theme-toggle__sun"></span>
+              <span class="theme-toggle__moon"></span>
+              <span class="theme-toggle__stars"></span>
+            </span>
+            <div class="theme-toggle__text theme-toggle__text--inline" aria-hidden="true">
+              <span class="theme-toggle__title">Tema do site</span>
+              <span class="theme-toggle__state">Modo claro</span>
+            </div>
+            <span class="sr-only">Ativar modo escuro</span>
+          </button>
+          <a href="https://api.whatsapp.com/send?phone=5561982714522&text=Ol%C3%A1!%20%F0%9F%98%8B%20Quero%20fazer%20meu%20pedido%20e%20aproveitar%20as%20del%C3%ADcias%20do%20M%C3%A1ximo%20Crepes!
+" class="btn-default desktop-only">Pe&ccedil;a aqui</a>
+        </div>
+        <button id="mobile_btn" aria-label="Abrir menu de navega&ccedil;&atilde;o">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </nav>
+
+      <div id="mobile_menu" aria-hidden="true">
+        <ul id="mobile_nav_list">
+          <li class="nav-item"><a href="#cardapio-hero">Topo</a></li>
+          <li class="nav-item"><a href="#crepes-salgados">Crepes salgados</a></li>
+          <li class="nav-item"><a href="#crepes-especiais">Crepes especiais</a></li>
+          <li class="nav-item"><a href="#crepes-vegetarianos">Crepes vegetarianos</a></li>
+          <li class="nav-item"><a href="#crepes-doces">Crepes doces</a></li>
+          <li class="nav-item"><a href="#hamburgueres-tradicionais">Hamb&uacute;rgueres tradicionais</a></li>
+          <li class="nav-item"><a href="#hamburgueres-artesanais">Hamb&uacute;rgueres artesanais</a></li>
+          <li class="nav-item"><a href="../index.html#home">Voltar para o site</a></li>
+        </ul>
+        <button id="mobile_theme_toggle" class="theme-toggle mobile-only" type="button" aria-pressed="false">
+          <span class="theme-toggle__icon" aria-hidden="true">
+            <span class="theme-toggle__sun"></span>
+            <span class="theme-toggle__moon"></span>
+            <span class="theme-toggle__stars"></span>
+          </span>
+          <div class="theme-toggle__text" aria-hidden="true">
+            <span class="theme-toggle__title">Tema do site</span>
+            <span class="theme-toggle__state">Modo claro</span>
+          </div>
+          <span class="sr-only">Ativar modo escuro</span>
+        </button>
+        <a href="https://api.whatsapp.com/send?phone=5561982714522&text=Ol%C3%A1!%20%F0%9F%98%8B%20Quero%20fazer%20meu%20pedido%20e%20aproveitar%20as%20del%C3%ADcias%20do%20M%C3%A1ximo%20Crepes!
+" class="btn-default mobile-only">Pe&ccedil;a aqui</a>
+      </div>
+    </header>
+    <main>
+      <section id="cardapio-hero" class="menu-hero">
+        <div class="menu-hero__content">
+          <div class="menu-hero__status">
+            <span class="menu-hero__status-pill">
+              <i class="fa-solid fa-medal" aria-hidden="true"></i>
+              Qualidade Máxima
+            </span>
+            <span class="menu-hero__status-pill">
+              <i class="fa-solid fa-motorcycle" aria-hidden="true"></i>
+              Entrega turbinada
+            </span>
+            <span class="menu-hero__status-pill">
+              <i class="fa-solid fa-star" aria-hidden="true"></i>
+              Avalia&ccedil;&otilde;es 4,9/5
+            </span>
+          </div>
+          <h1>Card&aacute;pio M&aacute;ximo Crepes</h1>
+          <p>
+            No Máximo Crepes, cada receita nasce da vontade de oferecer uma experiência única, unindo sabor, cuidado e ingredientes selecionados com carinho. Trabalhamos diariamente para entregar crepes e hambúrgueres que realmente surpreendem — daqueles que despertam memória afetiva e garantem conforto em cada mordida.
+
+Aqui você encontra desde opções clássicas até combinações autorais criadas especialmente para quem ama descobrir novos sabores. Tudo é preparado na hora, com massas leves, recheios generosos e ingredientes frescos, resultando no equilíbrio perfeito entre textura, aroma e qualidade.
+
+Escolha o seu favorito e permita-se viver uma experiência gastronômica completa, do preparo ao último pedaço.
+          </p>
+        </div>
+        <div class="menu-hero__media" aria-label="Espa&ccedil;o para imagem 1080 por 1080 pixels">
+          <div class="menu-hero__photo-shell">
+            <img src="images/imagem chamativa.png" alt="Crepe artesanal servido com recheio farto" loading="lazy" />
+          </div>
+          <span class="menu-hero__media-caption"></span>
+        </div>
+        <div class="menu-hero__actions">
+          <a href="https://api.whatsapp.com/send?phone=5561982714522&text=Ol%C3%A1!%20%F0%9F%98%8B%20Quero%20fazer%20meu%20pedido%20e%20aproveitar%20as%20del&iacute;cias%20do%20M&aacute;ximo%20Crepes!
+" class="btn-default">
+            <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+            Fazer pedido agora
+          </a>
+          <a href="../index.html#mapa" class="menu-hero__link">Ver endere&ccedil;o</a>
+        </div>
+        <div class="menu-hero__media-badges">
+          <div class="media-badge">
+            <i class="fa-solid fa-fire" aria-hidden="true"></i>
+            <div>
+              <strong>Favorito da casa</strong>
+              <span>Crepe do Papai</span>
+            </div>
+          </div>
+          <div class="media-badge">
+            <i class="fa-solid fa-clock" aria-hidden="true"></i>
+            <div>
+              <strong>Preparado na hora</strong>
+              <span>Em média 7 minutos</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <nav class="menu-tabs menu-tabs--floating" aria-label="Categorias do card&aacute;pio">
+        <button
+          type="button"
+          class="menu-tabs__toggle"
+          aria-expanded="false"
+          aria-controls="menu-tabs-panel"
+        >
+          <span class="menu-tabs__toggle-label">Explorar categorias</span>
+          <i class="fa-solid fa-bars" aria-hidden="true"></i>
+        </button>
+        <div class="menu-tabs__overlay" hidden></div>
+        <div
+          id="menu-tabs-panel"
+          class="menu-tabs__panel"
+          role="group"
+          aria-label="Categorias dispon&iacute;veis"
+        >
+          <button type="button" class="menu-tab active" data-target="#crepes-salgados">Crepes salgados</button>
+          <button type="button" class="menu-tab" data-target="#crepes-especiais">Crepes especiais</button>
+          <button type="button" class="menu-tab" data-target="#crepes-vegetarianos">Crepes vegetarianos</button>
+          <button type="button" class="menu-tab" data-target="#crepes-doces">Crepes doces</button>
+          <button type="button" class="menu-tab" data-target="#hamburgueres-tradicionais">Hamb&uacute;rgueres tradicionais</button>
+          <button type="button" class="menu-tab" data-target="#hamburgueres-artesanais">Hamb&uacute;rgueres artesanais</button>
+        </div>
+      </nav>
+
+      <section id="menu-principal" class="menu-sections">
+        <section id="crepes-salgados" class="menu-category">
+          <header class="menu-category__header">
+            <h2>Crepes salgados</h2>
+            <p>Receitas cl&aacute;ssicas com massa leve e recheios generosos para qualquer momento do dia.</p>
+          </header>
+          <div class="menu-grid">
+            <article class="menu-card">
+              <figure class="menu-card__media">
+                <img src="https://i.postimg.cc/1gnTgwqN/papai.png" alt="Crepe do Papai com carne de sol, bacon e calabresa" loading="lazy" />
+              </figure>
+              <div class="menu-card__body">
+                <header class="menu-card__header">
+                    <h3 class="menu-card__title">Crepe do Papai</h3>
+                </header>
+                <p class="menu-card__description">Queijo, carne de sol, bacon, calabresa, milho, tomate, or&eacute;gano e catupiry.</p>
+                <div class="menu-card__footer">
+                    <span class="menu-card__price">R$ 28,00</span>
+                </div>
+              </div>
+            </article>
+            <article class="menu-card">
+              <figure class="menu-card__media">
+                <img src="https://i.postimg.cc/1gnTgwNd/mamae.png" alt="Crepe da Mam&atilde;e com frango, bacon e calabresa" loading="lazy" />
+              </figure>
+              <div class="menu-card__body">
+                <header class="menu-card__header">
+                    <h3 class="menu-card__title">Crepe da Mam&atilde;e</h3>
+                </header>
+                <p class="menu-card__description">Queijo, frango, bacon, calabresa, milho, tomate, or&eacute;gano e catupiry.</p>
+                <div class="menu-card__footer">
+                    <span class="menu-card__price">R$ 28,00</span>
+                </div>
+              </div>
+            </article>
+            <article class="menu-card">
+              <figure class="menu-card__media">
+                <img src="https://i.postimg.cc/zyP6X03p/carnedesol.png" alt="Crepe Carne de Sol com milho e catupiry" loading="lazy" />
+              </figure>
+              <div class="menu-card__body">
+                <header class="menu-card__header">
+                    <h3 class="menu-card__title">Carne de Sol</h3>
+                </header>
+                <p class="menu-card__description">Queijo, carne de sol, milho, tomate, or&eacute;gano e catupiry.</p>
+                <div class="menu-card__footer">
+                    <span class="menu-card__price">R$ 25,00</span>
+                </div>
+              </div>
+            </article>
+            <article class="menu-card">
+              <figure class="menu-card__media">
+                <img src="https://i.postimg.cc/PCq0jBfQ/baconcomcatupiry.png" alt="Crepe Bacon com Catupiry" loading="lazy" />
+              </figure>
+              <div class="menu-card__body">
+                <header class="menu-card__header">
+                    <h3 class="menu-card__title">Bacon com Catupiry</h3>
+                </header>
+                <p class="menu-card__description">Queijo, bacon, milho, tomate, or&eacute;gano e catupiry.</p>
+                <div class="menu-card__footer">
+                    <span class="menu-card__price">R$ 25,00</span>
+                </div>
+              </div>
+            </article>
+            <article class="menu-card">
+              <figure class="menu-card__media">
+                <img src="https://i.postimg.cc/nXwgc0Mg/frangocombacon.jpg" alt="Crepe Frango com Bacon" loading="lazy" />
+              </figure>
+              <div class="menu-card__body">
+                <header class="menu-card__header">
+                    <h3 class="menu-card__title">Frango com Bacon</h3>
+                </header>
+                <p class="menu-card__description">Queijo, frango, bacon, milho, or&eacute;gano e catupiry.</p>
+                <div class="menu-card__footer">
+                    <span class="menu-card__price">R$ 24,00</span>
+                </div>
+              </div>
+            </article>
+            <article class="menu-card">
+              <figure class="menu-card__media">
+                <img src="https://i.postimg.cc/LJ0w6NnK/frangocomcalabresa.png" alt="Ilustra&ccedil;&atilde;o do crepe Frango com Calabresa" loading="lazy" />
+              </figure>
+              <div class="menu-card__body">
+                <header class="menu-card__header">
+                    <h3 class="menu-card__title">Frango com Calabresa</h3>
+                </header>
+                <p class="menu-card__description">Queijo, frango, calabresa, milho, or&eacute;gano e catupiry.</p>
+                <div class="menu-card__footer">
+                    <span class="menu-card__price">R$ 23,00</span>
+                </div>
+              </div>
+            </article>
+            <article class="menu-card">
+              <figure class="menu-card__media">
+                <img src="https://i.postimg.cc/9DfshvXt/calabresa.png" alt="Crepe Calabresa" loading="lazy" />
+              </figure>
+              <div class="menu-card__body">
+                <header class="menu-card__header">
+                    <h3 class="menu-card__title">Calabresa</h3>
+                </header>
+                <p class="menu-card__description">Queijo, calabresa, milho, tomate, or&eacute;gano e catupiry.</p>
+                <div class="menu-card__footer">
+                    <span class="menu-card__price">R$ 22,00</span>
+                </div>
+              </div>
+            </article>
+            <article class="menu-card">
+              <figure class="menu-card__media">
+                <img src="https://i.postimg.cc/ZWD2KV0Q/frangocomazeitona.jpg" alt="Crepe Frango com Azeitona" loading="lazy" />
+              </figure>
+              <div class="menu-card__body">
+                <header class="menu-card__header">
+                    <h3 class="menu-card__title">Frango com Azeitona</h3>
+                </header>
+                <p class="menu-card__description">Queijo, frango, azeitona, milho, or&eacute;gano e catupiry.</p>
+                <div class="menu-card__footer">
+                    <span class="menu-card__price">R$ 23,00</span>
+                </div>
+              </div>
+            </article>
+            <article class="menu-card">
+              <figure class="menu-card__media">
+                <img src="https://i.postimg.cc/hX36PpfR/frangocompalmito.jpg" alt="Crepe Frango com Palmito" loading="lazy" />
+              </figure>
+              <div class="menu-card__body">
+                <header class="menu-card__header">
+                    <h3 class="menu-card__title">Frango com Palmito</h3>
+                </header>
+                <p class="menu-card__description">Queijo, frango, palmito, milho, or&eacute;gano e catupiry.</p>
+                <div class="menu-card__footer">
+                    <span class="menu-card__price">R$ 23,00</span>
+                </div>
+              </div>
+            </article>
+            <article class="menu-card">
+              <figure class="menu-card__media">
+                <img src="https://i.postimg.cc/bZFWN3s8/frangocomcatupiry.png" alt="Crepe Frango com Catupiry" loading="lazy" />
+              </figure>
+              <div class="menu-card__body">
+                <header class="menu-card__header">
+                    <h3 class="menu-card__title">Frango com Catupiry</h3>
+                </header>
+                <p class="menu-card__description">Queijo, frango, milho, or&eacute;gano e catupiry.</p>
+                <div class="menu-card__footer">
+                    <span class="menu-card__price">R$ 20,00</span>
+                </div>
+              </div>
+            </article>
+            <article class="menu-card">
+              <figure class="menu-card__media">
+                <img src="https://i.postimg.cc/GB8NBGy4/napolitano.png" alt="Crepe Napolitano com presunto e tomate" loading="lazy" />
+              </figure>
+              <div class="menu-card__body">
+                <header class="menu-card__header">
+                    <h3 class="menu-card__title">Napolitano</h3>
+                </header>
+                <p class="menu-card__description">Queijo, presunto, milho, tomate, or&eacute;gano e catupiry.</p>
+                <div class="menu-card__footer">
+                    <span class="menu-card__price">R$ 20,00</span>
+                </div>
+              </div>
+            </article>
+            <article class="menu-card">
+              <figure class="menu-card__media">
+                <img src="https://i.postimg.cc/CR6XLmdr/fotosemfoto.png" alt="Ilustra&ccedil;&atilde;o do crepe de Queijo" loading="lazy" />
+              </figure>
+              <div class="menu-card__body">
+                <header class="menu-card__header">
+                    <h3 class="menu-card__title">Crepe de Queijo</h3>
+                </header>
+                <p class="menu-card__description">Queijo e or&eacute;gano.</p>
+                <div class="menu-card__footer">
+                    <span class="menu-card__price">R$ 15,00</span>
+                </div>
+              </div>
+            </article>
+          </div>
+        </section>
+        <section id="crepes-especiais" class="menu-category">
+          <header class="menu-category__header">
+            <h2>Crepes especiais</h2>
+            <p>Combina&ccedil;&otilde;es exclusivas com borda de queijo e ingredientes selecionados.</p>
+          </header>
+          <div class="menu-grid">
+            <article class="menu-card">
+              <figure class="menu-card__media">
+                <img src="https://i.postimg.cc/5XtDVZ9g/bacon-supreme.png" alt="Crepe Bacon Supreme com cheddar" loading="lazy" />
+              </figure>
+              <div class="menu-card__body">
+                <header class="menu-card__header">
+                    <h3 class="menu-card__title">Bacon Supreme</h3>
+                </header>
+                <p class="menu-card__description">Queijo, bacon, tomate, cheddar, manjeric&atilde;o, or&eacute;gano e borda de queijo.</p>
+                <div class="menu-card__footer">
+                    <span class="menu-card__price">R$ 30,00</span>
+                </div>
+              </div>
+            </article>
+            <article class="menu-card">
+              <figure class="menu-card__media">
+                <img src="https://i.postimg.cc/ZWqXS1YL/baconcombanana.png" alt="Crepe Bacon com Banana e borda de queijo" loading="lazy" />
+              </figure>
+              <div class="menu-card__body">
+                <header class="menu-card__header">
+                    <h3 class="menu-card__title">Bacon com Banana</h3>
+                </header>
+                <p class="menu-card__description">Queijo, bacon, banana, milho, tomate, or&eacute;gano, catupiry e borda de queijo.</p>
+                <div class="menu-card__footer">
+                    <span class="menu-card__price">R$ 30,00</span>
+                </div>
+              </div>
+            </article>
+            <article class="menu-card">
+              <figure class="menu-card__media">
+                <img src="https://i.postimg.cc/MnrNKdXd/carnedesolespecial.png" alt="Ilustra&ccedil;&atilde;o do crepe Carne de Sol Especial" loading="lazy" />
+              </figure>
+              <div class="menu-card__body">
+                <header class="menu-card__header">
+                    <h3 class="menu-card__title">Carne de Sol Especial</h3>
+                </header>
+                <p class="menu-card__description">Queijo, carne de sol, tomate, milho, cheddar, or&eacute;gano e borda de queijo.</p>
+                <div class="menu-card__footer">
+                    <span class="menu-card__price">R$ 30,00</span>
+                </div>
+              </div>
+            </article>
+            <article class="menu-card">
+              <figure class="menu-card__media">
+                <img src="https://i.postimg.cc/CR6XLmdr/fotosemfoto.png" alt="Ilustra&ccedil;&atilde;o do crepe Carne com Banana" loading="lazy" />
+              </figure>
+              <div class="menu-card__body">
+                <header class="menu-card__header">
+                    <h3 class="menu-card__title">Carne com Banana</h3>
+                </header>
+                <p class="menu-card__description">Queijo, carne de sol, banana, milho, tomate, or&eacute;gano, catupiry e borda de queijo.</p>
+                <div class="menu-card__footer">
+                    <span class="menu-card__price">R$ 30,00</span>
+                </div>
+              </div>
+            </article>
+            <article class="menu-card">
+              <figure class="menu-card__media">
+                <img src="https://i.postimg.cc/4YFqNBnM/frangocaipira.png" alt="Ilustra&ccedil;&atilde;o do crepe Frango Caipira" loading="lazy" />
+              </figure>
+              <div class="menu-card__body">
+                <header class="menu-card__header">
+                    <h3 class="menu-card__title">Frango Caipira</h3>
+                </header>
+                <p class="menu-card__description">Queijo, frango, bacon, ovo, cheddar, milho, or&eacute;gano e borda de queijo.</p>
+                <div class="menu-card__footer">
+                    <span class="menu-card__price">R$ 30,00</span>
+                </div>
+              </div>
+            </article>
+          </div>
+        </section>
+        <section id="crepes-vegetarianos" class="menu-category">
+          <header class="menu-category__header">
+            <h2>Crepes vegetarianos</h2>
+            <p>Op&ccedil;&otilde;es leves e cheias de sabor, sem abrir m&atilde;o da cremosidade.</p>
+          </header>
+          <div class="menu-grid">
+            <article class="menu-card">
+              <figure class="menu-card__media">
+                <img src="https://i.postimg.cc/XZRP9qfy/vegetariano.png" alt="Ilustra&ccedil;&atilde;o do crepe Vegetariano" loading="lazy" />
+              </figure>
+              <div class="menu-card__body">
+                <header class="menu-card__header">
+                    <h3 class="menu-card__title">Vegetariano</h3>
+                </header>
+                <p class="menu-card__description">Queijo, palmito, azeitona, tomate, milho, or&eacute;gano e catupiry.</p>
+                <div class="menu-card__footer">
+                    <span class="menu-card__price">R$ 25,00</span>
+                </div>
+              </div>
+            </article>
+            <article class="menu-card">
+              <figure class="menu-card__media">
+                <img src="https://i.postimg.cc/mcvn7kYr/ruculacomtomateseco.png" alt="Ilustra&ccedil;&atilde;o do crepe R&uacute;cula com Tomate Seco" loading="lazy" />
+              </figure>
+              <div class="menu-card__body">
+                <header class="menu-card__header">
+                    <h3 class="menu-card__title">R&uacute;cula com Tomate Seco</h3>
+                </header>
+                <p class="menu-card__description">Queijo, tomate seco, tomate, r&uacute;cula e or&eacute;gano.</p>
+                <div class="menu-card__footer">
+                    <span class="menu-card__price">R$ 22,00</span>
+                </div>
+              </div>
+            </article>
+            <article class="menu-card">
+              <figure class="menu-card__media">
+                <img src="https://i.postimg.cc/Ffdqf3Jw/margherita.jpg" alt="Crepe Margherita com tomate e manjeric&atilde;o" loading="lazy" />
+              </figure>
+              <div class="menu-card__body">
+                <header class="menu-card__header">
+                    <h3 class="menu-card__title">Margherita</h3>
+                </header>
+                <p class="menu-card__description">Queijo, tomate, manjeric&atilde;o e or&eacute;gano.</p>
+                <div class="menu-card__footer">
+                    <span class="menu-card__price">R$ 20,00</span>
+                </div>
+              </div>
+            </article>
+          </div>
+        </section>
+        <section id="crepes-doces" class="menu-category">
+          <header class="menu-category__header">
+            <h2>Crepes doces</h2>
+            <p>Combina&ccedil;&otilde;es doces para fechar o pedido com chave de ouro.</p>
+          </header>
+          <div class="menu-grid">
+            <article class="menu-card">
+              <figure class="menu-card__media">
+                <img src="https://i.postimg.cc/2qbJqhZj/morangocomchocolate.png" alt="Ilustra&ccedil;&atilde;o do crepe Tropical" loading="lazy" />
+              </figure>
+              <div class="menu-card__body">
+                <header class="menu-card__header">
+                    <h3 class="menu-card__title">Tropical</h3>
+                </header>
+                <p class="menu-card__description">Queijo, morango, chocolate, leite condensado e coco ralado.</p>
+                <div class="menu-card__footer">
+                    <span class="menu-card__price">R$ 22,00</span>
+                </div>
+              </div>
+            </article>
+            <article class="menu-card">
+              <figure class="menu-card__media">
+                <img src="https://i.postimg.cc/2qbJqhZj/morangocomchocolate.png" alt="Ilustra&ccedil;&atilde;o do crepe Morango com Chocolate" loading="lazy" />
+              </figure>
+              <div class="menu-card__body">
+                <header class="menu-card__header">
+                    <h3 class="menu-card__title">Morango com Chocolate</h3>
+                </header>
+                <p class="menu-card__description">Queijo, morango, chocolate e leite condensado.</p>
+                <div class="menu-card__footer">
+                    <span class="menu-card__price">R$ 21,00</span>
+                </div>
+              </div>
+            </article>
+            <article class="menu-card">
+              <figure class="menu-card__media">
+                <img src="https://i.postimg.cc/CR6XLmdr/fotosemfoto.png" alt="Crepe Ouro Branco com chocolate" loading="lazy" />
+              </figure>
+              <div class="menu-card__body">
+                <header class="menu-card__header">
+                    <h3 class="menu-card__title">Ouro Branco</h3>
+                </header>
+                <p class="menu-card__description">Queijo, bombom Ouro Branco e chocolate.</p>
+                <div class="menu-card__footer">
+                    <span class="menu-card__price">R$ 20,00</span>
+                </div>
+              </div>
+            </article>
+            <article class="menu-card">
+              <figure class="menu-card__media">
+                <img src="https://i.postimg.cc/CR6XLmdr/fotosemfoto.png" alt="Ilustra&ccedil;&atilde;o do crepe Banana com Chocolate" loading="lazy" />
+              </figure>
+              <div class="menu-card__body">
+                <header class="menu-card__header">
+                    <h3 class="menu-card__title">Banana com Chocolate</h3>
+                </header>
+                <p class="menu-card__description">Queijo, banana, chocolate, canela e leite condensado.</p>
+                <div class="menu-card__footer">
+                    <span class="menu-card__price">R$ 20,00</span>
+                </div>
+              </div>
+            </article>
+            <article class="menu-card">
+              <figure class="menu-card__media">
+                <img src="https://i.postimg.cc/CR6XLmdr/fotosemfoto.png" alt="Ilustra&ccedil;&atilde;o do crepe Banana Caramelada" loading="lazy" />
+              </figure>
+              <div class="menu-card__body">
+                <header class="menu-card__header">
+                    <h3 class="menu-card__title">Banana Caramelada</h3>
+                </header>
+                <p class="menu-card__description">Queijo, banana, caramelo e canela.</p>
+                <div class="menu-card__footer">
+                    <span class="menu-card__price">R$ 20,00</span>
+                </div>
+              </div>
+            </article>
+            <article class="menu-card">
+              <figure class="menu-card__media">
+                <img src="https://i.postimg.cc/TyLSygD5/prestigio.jpg" alt="Crepe Prest&iacute;gio com chocolate e coco" loading="lazy" />
+              </figure>
+              <div class="menu-card__body">
+                <header class="menu-card__header">
+                    <h3 class="menu-card__title">Prest&iacute;gio</h3>
+                </header>
+                <p class="menu-card__description">Queijo, chocolate, coco ralado e leite condensado.</p>
+                <div class="menu-card__footer">
+                    <span class="menu-card__price">R$ 20,00</span>
+                </div>
+              </div>
+            </article>
+            <article class="menu-card">
+              <figure class="menu-card__media">
+                <img src="https://i.postimg.cc/CR6XLmdr/fotosemfoto.png" alt="Ilustra&ccedil;&atilde;o do crepe Chocolate com Pa&ccedil;oca" loading="lazy" />
+              </figure>
+              <div class="menu-card__body">
+                <header class="menu-card__header">
+                    <h3 class="menu-card__title">Chocolate com Pa&ccedil;oca</h3>
+                </header>
+                <p class="menu-card__description">Queijo, pa&ccedil;oca e chocolate.</p>
+                <div class="menu-card__footer">
+                    <span class="menu-card__price">R$ 20,00</span>
+                </div>
+              </div>
+            </article>
+            <article class="menu-card">
+              <figure class="menu-card__media">
+                <img src="https://i.postimg.cc/CR6XLmdr/fotosemfoto.png" alt="Ilustra&ccedil;&atilde;o do crepe Pa&ccedil;oquita" loading="lazy" />
+              </figure>
+              <div class="menu-card__body">
+                <header class="menu-card__header">
+                    <h3 class="menu-card__title">Pa&ccedil;oquita</h3>
+                </header>
+                <p class="menu-card__description">Queijo, pa&ccedil;oca, coco ralado e leite condensado.</p>
+                <div class="menu-card__footer">
+                    <span class="menu-card__price">R$ 20,00</span>
+                </div>
+              </div>
+            </article>
+            <article class="menu-card">
+              <figure class="menu-card__media">
+                <img src="https://i.postimg.cc/CR6XLmdr/fotosemfoto.png" alt="Ilustra&ccedil;&atilde;o do crepe Creme de Avel&atilde;" loading="lazy" />
+              </figure>
+              <div class="menu-card__body">
+                <header class="menu-card__header">
+                    <h3 class="menu-card__title">Creme de Avel&atilde;</h3>
+                </header>
+                <p class="menu-card__description">Queijo e creme de avel&atilde;.</p>
+                <div class="menu-card__footer">
+                    <span class="menu-card__price">R$ 18,00</span>
+                </div>
+              </div>
+            </article>
+            <article class="menu-card">
+              <figure class="menu-card__media">
+                <img src="https://i.postimg.cc/CR6XLmdr/fotosemfoto.png" alt="Ilustra&ccedil;&atilde;o do crepe Doce de Leite" loading="lazy" />
+              </figure>
+              <div class="menu-card__body">
+                <header class="menu-card__header">
+                    <h3 class="menu-card__title">Doce de Leite</h3>
+                </header>
+                <p class="menu-card__description">Queijo, coco ralado e doce de leite.</p>
+                <div class="menu-card__footer">
+                    <span class="menu-card__price">R$ 18,00</span>
+                </div>
+              </div>
+            </article>
+            <article class="menu-card">
+              <figure class="menu-card__media">
+                <img src="https://i.postimg.cc/CR6XLmdr/fotosemfoto.png" alt="Ilustra&ccedil;&atilde;o do crepe Leite Condensado" loading="lazy" />
+              </figure>
+              <div class="menu-card__body">
+                <header class="menu-card__header">
+                    <h3 class="menu-card__title">Leite Condensado</h3>
+                </header>
+                <p class="menu-card__description">Queijo, coco ralado e leite condensado.</p>
+                <div class="menu-card__footer">
+                    <span class="menu-card__price">R$ 18,00</span>
+                </div>
+              </div>
+            </article>
+            <article class="menu-card">
+              <figure class="menu-card__media">
+                <img src="https://i.postimg.cc/CR6XLmdr/fotosemfoto.png" alt="Ilustra&ccedil;&atilde;o do crepe Romeu e Julieta" loading="lazy" />
+              </figure>
+              <div class="menu-card__body">
+                <header class="menu-card__header">
+                    <h3 class="menu-card__title">Romeu e Julieta</h3>
+                </header>
+                <p class="menu-card__description">Queijo e goiabada.</p>
+                <div class="menu-card__footer">
+                    <span class="menu-card__price">R$ 18,00</span>
+                </div>
+              </div>
+            </article>
+          </div>
+        </section>
+        <section id="hamburgueres-tradicionais" class="menu-category">
+          <header class="menu-category__header">
+            <h2>Hamb&uacute;rgueres tradicionais</h2>
+            <p>Lanches pr&aacute;ticos e cheios de recheio para acompanhar seu crepe preferido.</p>
+          </header>
+          <div class="menu-grid">
+            <article class="menu-card">
+              <figure class="menu-card__media">
+                <img src="https://i.postimg.cc/7GSW949t/x-baguncinha.png" alt="Ilustra&ccedil;&atilde;o do lanche X-Baguncinha" loading="lazy" />
+              </figure>
+              <div class="menu-card__body">
+                <header class="menu-card__header">
+                    <h3 class="menu-card__title">X-Baguncinha</h3>
+                </header>
+                <p class="menu-card__description">P&atilde;o, maionese, dois hamb&uacute;rguers, dois queijos, dois presuntos, bacon, salsicha, ovo, alface, tomate e milho.</p>
+                <div class="menu-card__footer">
+                    <span class="menu-card__price">R$ 30,00</span>
+                </div>
+              </div>
+            </article>
+            <article class="menu-card">
+              <figure class="menu-card__media">
+                <img src="https://i.postimg.cc/V01HHhH0/x-tudo.png" alt="Ilustra&ccedil;&atilde;o do lanche X-Tudo" loading="lazy" />
+              </figure>
+              <div class="menu-card__body">
+                <header class="menu-card__header">
+                    <h3 class="menu-card__title">X-Tudo</h3>
+                </header>
+                <p class="menu-card__description">P&atilde;o, maionese, hamb&uacute;rguer, queijo, presunto, bacon, salsicha, ovo, alface, tomate e milho.</p>
+                <div class="menu-card__footer">
+                    <span class="menu-card__price">R$ 25,00</span>
+                </div>
+              </div>
+            </article>
+            <article class="menu-card">
+              <figure class="menu-card__media">
+                <img src="https://i.postimg.cc/S2cvd4VS/x-bacon.png" alt="Ilustra&ccedil;&atilde;o do lanche X-Bacon" loading="lazy" />
+              </figure>
+              <div class="menu-card__body">
+                <header class="menu-card__header">
+                    <h3 class="menu-card__title">X-Bacon</h3>
+                </header>
+                <p class="menu-card__description">P&atilde;o, maionese, hamb&uacute;rguer, queijo, presunto, bacon, ovo, alface, tomate e milho.</p>
+                <div class="menu-card__footer">
+                    <span class="menu-card__price">R$ 23,00</span>
+                </div>
+              </div>
+            </article>
+            <article class="menu-card">
+              <figure class="menu-card__media">
+                <img src="https://i.postimg.cc/XrDm7QXs/foto-sem-foto2.png" alt="Ilustra&ccedil;&atilde;o do lanche X-Salada" loading="lazy" />
+              </figure>
+              <div class="menu-card__body">
+                <header class="menu-card__header">
+                    <h3 class="menu-card__title">X-Salada</h3>
+                </header>
+                <p class="menu-card__description">P&atilde;o, maionese, hamb&uacute;rguer, queijo, presunto, ovo, alface, tomate e milho.</p>
+                <div class="menu-card__footer">
+                    <span class="menu-card__price">R$ 20,00</span>
+                </div>
+              </div>
+            </article>
+            <article class="menu-card">
+              <figure class="menu-card__media">
+                <img src="https://i.postimg.cc/mz75j4Vs/x-burguer.jpg" alt="Ilustra&ccedil;&atilde;o do lanche X-Burguer" loading="lazy" />
+              </figure>
+              <div class="menu-card__body">
+                <header class="menu-card__header">
+                    <h3 class="menu-card__title">X-Burguer</h3>
+                </header>
+                <p class="menu-card__description">P&atilde;o, maionese, hamb&uacute;rguer e queijo.</p>
+                <div class="menu-card__footer">
+                    <span class="menu-card__price">R$ 13,00</span>
+                </div>
+              </div>
+            </article>
+          </div>
+        </section>
+        <section id="hamburgueres-artesanais" class="menu-category">
+          <header class="menu-category__header">
+            <h2>Hamb&uacute;rgueres artesanais</h2>
+            <p>Blends selecionados com 150 g e combina&ccedil;&otilde;es autorais.</p>
+          </header>
+          <div class="menu-grid">
+            <article class="menu-card">
+              <figure class="menu-card__media">
+                <img src="https://i.postimg.cc/JyDgyZkw/maximoburger.png" alt="M&aacute;ximo Burger com bacon e barbecue" loading="lazy" />
+              </figure>
+              <div class="menu-card__body">
+                <header class="menu-card__header">
+                    <h3 class="menu-card__title">M&aacute;ximo Burger</h3>
+                </header>
+                <p class="menu-card__description">P&atilde;o, maionese, barbecue, dois blends bovinos (150 g cada), queijo, bacon, tomate e alface.</p>
+                <div class="menu-card__footer">
+                    <span class="menu-card__price">R$ 32,00</span>
+                </div>
+              </div>
+            </article>
+            <article class="menu-card">
+              <figure class="menu-card__media">
+                <img src="https://i.postimg.cc/XrDm7QXs/foto-sem-foto2.png" alt="Ilustra&ccedil;&atilde;o do lanche Chicken Supreme" loading="lazy" />
+              </figure>
+              <div class="menu-card__body">
+                <header class="menu-card__header">
+                    <h3 class="menu-card__title">Chicken Supreme</h3>
+                </header>
+                <p class="menu-card__description">P&atilde;o, maionese, blend de frango com bacon (150 g), tomate, alface e cebola caramelizada com bacon.</p>
+                <div class="menu-card__footer">
+                    <span class="menu-card__price">R$ 30,00</span>
+                </div>
+              </div>
+            </article>
+            <article class="menu-card">
+              <figure class="menu-card__media">
+                <img src="https://i.postimg.cc/XrDm7QXs/foto-sem-foto2.png" alt="Ilustra&ccedil;&atilde;o do lanche Frango ao Pesto" loading="lazy" />
+              </figure>
+              <div class="menu-card__body">
+                <header class="menu-card__header">
+                    <h3 class="menu-card__title">Frango ao Pesto</h3>
+                </header>
+                <p class="menu-card__description">P&atilde;o, maionese, blend de frango com bacon (150 g), tomate, alface e molho pesto.</p>
+                <div class="menu-card__footer">
+                    <span class="menu-card__price">R$ 28,00</span>
+                </div>
+              </div>
+            </article>
+            <article class="menu-card">
+              <figure class="menu-card__media">
+                <img src="https://i.postimg.cc/kV6ZVKbV/nordestino.png" alt="Ilustra&ccedil;&atilde;o do lanche Nordestino com queijo coalho" loading="lazy" />
+              </figure>
+              <div class="menu-card__body">
+                <header class="menu-card__header">
+                    <h3 class="menu-card__title">Nordestino</h3>
+                </header>
+                <p class="menu-card__description">P&atilde;o, queijo coalho, mela&ccedil;o de cana, blend bovino (150 g) e queijo.</p>
+                <div class="menu-card__footer">
+                    <span class="menu-card__price">R$ 28,00</span>
+                </div>
+              </div>
+            </article>
+            <article class="menu-card">
+              <figure class="menu-card__media">
+                <img src="https://i.postimg.cc/XrDm7QXs/foto-sem-foto2.png" alt="Ilustra&ccedil;&atilde;o do lanche Caramelizado Burger" loading="lazy" />
+              </figure>
+              <div class="menu-card__body">
+                <header class="menu-card__header">
+                    <h3 class="menu-card__title">Caramelizado Burger</h3>
+                </header>
+                <p class="menu-card__description">P&atilde;o, maionese, blend bovino (150 g), cheddar e cebola caramelizada com bacon.</p>
+                <div class="menu-card__footer">
+                    <span class="menu-card__price">R$ 27,00</span>
+                </div>
+              </div>
+            </article>
+            <article class="menu-card">
+              <figure class="menu-card__media">
+                <img src="https://i.postimg.cc/XrDm7QXs/foto-sem-foto2.png" alt="Ilustra&ccedil;&atilde;o do lanche American Burger" loading="lazy" />
+              </figure>
+              <div class="menu-card__body">
+                <header class="menu-card__header">
+                    <h3 class="menu-card__title">American Burger</h3>
+                </header>
+                <p class="menu-card__description">P&atilde;o, maionese, blend bovino (150 g), queijo e bacon.</p>
+                <div class="menu-card__footer">
+                    <span class="menu-card__price">R$ 27,00</span>
+                </div>
+              </div>
+            </article>
+            <article class="menu-card">
+              <figure class="menu-card__media">
+                <img src="https://i.postimg.cc/XrDm7QXs/foto-sem-foto2.png" alt="Ilustra&ccedil;&atilde;o do lanche Salad Burger" loading="lazy" />
+              </figure>
+              <div class="menu-card__body">
+                <header class="menu-card__header">
+                    <h3 class="menu-card__title">Salad Burger</h3>
+                </header>
+                <p class="menu-card__description">P&atilde;o, maionese, blend bovino (150 g), queijo, ovo, alface e tomate.</p>
+                <div class="menu-card__footer">
+                    <span class="menu-card__price">R$ 26,00</span>
+                </div>
+              </div>
+            </article>
+          </div>
+        </section>
+      </section>
+    </main>
+    <footer class="rodape">
+      <p>
+        &copy; 2025 - M&aacute;ximo Crepes. Todos os direitos reservados. <br />
+        CNPJ 21.193.217/0001-35 &bull; SQN 306 Banca de Jornal - Asa Norte, DF.
+      </p>
+    </footer>
+
+    <script src="javascript/script.js"></script>
+  </body>
+</html>
