@@ -12,7 +12,6 @@
   background: linear-gradient(135deg, rgba(247, 250, 238, 0.96), rgba(224, 237, 188, 0.92) 52%, rgba(215, 218, 207, 0.94));
   border-radius: 32px;
   border: 1px solid rgba(164, 208, 0, 0.24);
-  box-shadow: 0 28px 56px var(--shadow-soft);
   overflow: hidden;
   backdrop-filter: blur(4px);
   animation: fade-scale 0.9s ease both;
@@ -23,26 +22,27 @@
   content: '';
   position: absolute;
   border-radius: 50%;
-  filter: blur(0.4px);
   z-index: 0;
+  pointer-events: none;
+  filter: blur(16px);
 }
 
 .localizacao-bloco::before {
-  width: 320px;
-  height: 320px;
-  top: -150px;
-  right: -110px;
-  background: radial-gradient(circle at center, rgba(164, 208, 0, 0.16), rgba(164, 208, 0, 0));
-  opacity: 0.55;
+  width: 420px;
+  height: 420px;
+  top: -110px;
+  right: -120px;
+  background: radial-gradient(circle at 50% 50%, rgba(164, 208, 0, 0.28) 0%, rgba(164, 208, 0, 0.08) 42%, rgba(164, 208, 0, 0) 70%);
+  opacity: 0.65;
 }
 
 .localizacao-bloco::after {
-  width: 260px;
-  height: 260px;
-  bottom: -120px;
-  left: -90px;
-  background: radial-gradient(circle at center, rgba(255, 196, 0, 0.14), rgba(255, 196, 0, 0));
-  opacity: 0.5;
+  width: 360px;
+  height: 360px;
+  bottom: -140px;
+  left: -100px;
+  background: radial-gradient(circle at 50% 50%, rgba(255, 196, 0, 0.26) 0%, rgba(255, 196, 0, 0.08) 40%, rgba(255, 196, 0, 0) 68%);
+  opacity: 0.62;
 }
 
 .localizacao-info,
@@ -96,7 +96,6 @@
   padding: 18px 20px;
   border-radius: 20px;
   background: rgba(255, 255, 255, 0.8);
-  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.08);
   border: 1px solid rgba(164, 208, 0, 0.16);
   transition: transform 0.3s ease, box-shadow 0.35s ease;
 }
@@ -104,7 +103,6 @@
 .localizacao-dados li:hover,
 .localizacao-dados li:focus-within {
   transform: translateY(-6px);
-  box-shadow: 0 22px 42px rgba(126, 154, 46, 0.18);
 }
 
 .localizacao-dados i {
@@ -170,7 +168,6 @@
 .localizacao-cta {
   padding: 12px 26px;
   font-size: 0.98rem;
-  box-shadow: 0 18px 36px rgba(164, 208, 0, 0.24);
 }
 
 .localizacao-cta i {
@@ -194,7 +191,6 @@
 .localizacao-link:hover,
 .localizacao-link:focus {
   transform: translateY(-1px);
-  box-shadow: 0 12px 26px rgba(0, 0, 0, 0.12);
   border-color: var(--color-primary-6);
 }
 
@@ -215,10 +211,8 @@
   aspect-ratio: 4 / 3;
   border-radius: 26px;
   overflow: hidden;
-  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.16);
   border: 1px solid rgba(164, 208, 0, 0.2);
   background: rgba(255, 255, 255, 0.85);
-  animation: float-y 16s ease-in-out infinite alternate;
 }
 
 .localizacao-mapa-frame iframe {
@@ -239,7 +233,6 @@
   border: 1px solid rgba(164, 208, 0, 0.18);
   font-size: 0.95rem;
   color: rgba(29, 29, 29, 0.72);
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
   animation: fade-scale 1s ease both;
   animation-delay: 0.2s;
 }
@@ -253,7 +246,6 @@
 body[data-theme='dark'] .localizacao-bloco {
   background: linear-gradient(135deg, rgba(19, 24, 28, 0.96), rgba(27, 31, 35, 0.94) 55%, rgba(31, 37, 43, 0.95));
   border-color: rgba(147, 204, 51, 0.26);
-  box-shadow: 0 32px 60px rgba(0, 0, 0, 0.55);
 }
 
 body[data-theme='dark'] .localizacao-bloco::before {
@@ -277,7 +269,6 @@ body[data-theme='dark'] .localizacao-texto {
 body[data-theme='dark'] .localizacao-dados li {
   background: rgba(31, 37, 43, 0.86);
   border-color: rgba(147, 204, 51, 0.22);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
 }
 
 body[data-theme='dark'] .localizacao-dados strong {
@@ -299,25 +290,21 @@ body[data-theme='dark'] .localizacao-link {
   background: rgba(31, 37, 43, 0.85);
   border-color: rgba(147, 204, 51, 0.26);
   color: var(--color-neutral-2);
-  box-shadow: 0 18px 36px rgba(0, 0, 0, 0.55);
 }
 
 body[data-theme='dark'] .localizacao-link:hover,
 body[data-theme='dark'] .localizacao-link:focus {
-  box-shadow: 0 20px 42px rgba(0, 0, 0, 0.65);
 }
 
 body[data-theme='dark'] .localizacao-mapa-frame {
   border-color: rgba(147, 204, 51, 0.24);
   background: rgba(23, 27, 32, 0.92);
-  box-shadow: 0 28px 56px rgba(0, 0, 0, 0.6);
 }
 
 body[data-theme='dark'] .localizacao-mapa-nota {
   background: rgba(31, 37, 43, 0.88);
   border-color: rgba(147, 204, 51, 0.2);
   color: rgba(203, 213, 225, 0.8);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.55);
 }
 
 @media screen and (max-width: 1024px) {

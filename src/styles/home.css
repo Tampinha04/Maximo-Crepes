@@ -82,7 +82,6 @@
   background: rgba(255, 255, 255, 0.82);
   color: var(--color-primary-6);
   font-size: 1.75rem;
-  box-shadow: 0 18px 36px rgba(164, 208, 0, 0.25);
   backdrop-filter: blur(8px);
   pointer-events: none;
   z-index: 2;
@@ -103,7 +102,6 @@
   bottom: 12%;
   right: 56%;
   color: var(--color-primary-8);
-  box-shadow: 0 16px 34px rgba(229, 57, 53, 0.22);
   animation-duration: 6.5s;
 }
 
@@ -117,7 +115,6 @@
 
 body[data-theme='dark'] .banner-emoji {
   background: rgba(27, 31, 35, 0.76);
-  box-shadow: 0 18px 36px rgba(0, 0, 0, 0.45);
 }
 
 .banner-chip {
@@ -131,14 +128,12 @@ body[data-theme='dark'] .banner-emoji {
   color: var(--color-neutral-1);
   font-size: 0.88rem;
   font-weight: 600;
-  box-shadow: 0 20px 38px rgba(164, 208, 0, 0.25), inset 0 3px 8px rgba(255, 255, 255, 0.65);
   border: 1px solid rgba(164, 208, 0, 0.4);
   backdrop-filter: blur(6px);
   transform: rotateX(14deg) rotateY(-18deg) translateZ(40px);
   transform-origin: center;
-  animation: chip-float 9s ease-in-out infinite;
   pointer-events: none;
-  z-index: 2;
+  z-index: 3;
 }
 
 .banner-chip::after {
@@ -164,6 +159,7 @@ body[data-theme='dark'] .banner-emoji {
 .banner-chip.chip-delivery {
   top: 6%;
   right: 8%;
+  animation: chip-float-delivery 9s ease-in-out infinite;
   animation-delay: -1.4s;
 }
 
@@ -171,24 +167,66 @@ body[data-theme='dark'] .banner-emoji {
   bottom: 12%;
   left: 2%;
   transform: rotateX(16deg) rotateY(22deg) translateZ(28px);
-  animation: chip-float-alt 8s ease-in-out infinite;
-  box-shadow: 0 22px 40px rgba(255, 196, 0, 0.22), inset 0 3px 8px rgba(255, 255, 255, 0.55);
-  border-color: rgba(255, 196, 0, 0.36);
+  animation: chip-float-chef 8s ease-in-out infinite;
+  border-color: rgba(255, 255, 255, 0.36);
 }
 
 .banner-chip.chip-rating {
   top: 58%;
   right: 20%;
   transform: rotateX(18deg) rotateY(-12deg) translateZ(32px);
-  animation: chip-float 7s ease-in-out infinite;
+  animation: chip-float-rating 7s ease-in-out infinite;
   animation-delay: -2.6s;
+  /* make rating visually distinct: warm/golden look */
+  padding: 10px 14px;
+  background: linear-gradient(145deg, #fff8e6 0%, #fff1d0 100%);
+  border-color: rgba(0, 0, 0, 0.32);
+  color: #000000;
+  box-shadow: 0 10px 30px rgba(255, 170, 0, 0.12), 0 2px 8px rgba(0, 0, 0, 0.08);
+  font-weight: 700;
+  gap: 10px;
+  font-size: 0.95rem;
+}
+
+/* style the stars inside the rating chip */
+.banner-chip.chip-rating .rating-stars i {
+  color: #ffb400; /* golden star */
+  filter: drop-shadow(0 2px 2px rgba(255, 255, 255, 0.12));
+  transform: translateZ(10px);
+  font-size: 1.05rem;
+  margin-right: 2px;
+}
+
+.banner-chip.chip-rating .rating-stars {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.banner-chip.chip-rating .rating-value {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.12);
+  padding: 4px 8px;
+  border-radius: 12px;
+  color: #5b3400;
+  font-weight: 800;
+  box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.06);
+}
+
+body[data-theme='dark'] .banner-chip.chip-rating .rating-value {
+  background: rgba(0, 0, 0, 0.28);
+  color: #ffe9b0;
+}
+
+body[data-theme='light'] .banner-chip.chip-rating .rating-value {
+  background: rgba(255, 255, 255, 0.2);
+  color: #4b2c00;
 }
 
 body[data-theme='dark'] .banner-chip {
   background: linear-gradient(145deg, rgba(27, 31, 35, 0.96), rgba(27, 31, 35, 0.78));
   color: rgba(241, 245, 249, 0.95);
   border-color: rgba(148, 197, 33, 0.35);
-  box-shadow: 0 24px 44px rgba(0, 0, 0, 0.55), inset 0 2px 6px rgba(255, 255, 255, 0.06);
 }
 
 body[data-theme='dark'] .banner-chip::after {
@@ -208,29 +246,42 @@ body[data-theme='dark'] .banner-chip::after {
   }
 }
 
-@keyframes chip-float {
+@keyframes chip-float-delivery {
   0%,
   100% {
-    transform: rotateX(14deg) rotateY(-18deg) translateZ(40px) translateY(0);
+    transform: rotateX(14deg) rotateY(-18deg) translateZ(40px) translate(0, 0);
   }
   40% {
-    transform: rotateX(10deg) rotateY(-14deg) translateZ(48px) translateY(-14px);
+    transform: rotateX(13deg) rotateY(-16deg) translateZ(44px) translate(-4px, -8px);
   }
   70% {
-    transform: rotateX(18deg) rotateY(-20deg) translateZ(36px) translateY(10px);
+    transform: rotateX(15deg) rotateY(-20deg) translateZ(36px) translate(3px, 6px);
   }
 }
 
-@keyframes chip-float-alt {
+@keyframes chip-float-chef {
   0%,
   100% {
-    transform: rotateX(16deg) rotateY(22deg) translateZ(28px) translateY(0);
+    transform: rotateX(16deg) rotateY(22deg) translateZ(28px) translate(0, 0);
   }
   45% {
-    transform: rotateX(12deg) rotateY(18deg) translateZ(36px) translateY(-18px);
+    transform: rotateX(15deg) rotateY(20deg) translateZ(32px) translate(-3px, -12px);
   }
   75% {
-    transform: rotateX(18deg) rotateY(26deg) translateZ(24px) translateY(8px);
+    transform: rotateX(17deg) rotateY(24deg) translateZ(26px) translate(4px, 6px);
+  }
+}
+
+@keyframes chip-float-rating {
+  0%,
+  100% {
+    transform: rotateX(18deg) rotateY(-12deg) translateZ(32px) translate(0, 0);
+  }
+  35% {
+    transform: rotateX(17deg) rotateY(-10deg) translateZ(34px) translate(6px, -8px);
+  }
+  70% {
+    transform: rotateX(19deg) rotateY(-14deg) translateZ(30px) translate(-5px, 6px);
   }
 }
 
@@ -258,6 +309,104 @@ body[data-theme='dark'] .banner-chip::after {
   z-index: 0;
   filter: saturate(110%);
   animation: float-y 14s ease-in-out infinite alternate;
+}
+
+@media screen and (max-width: 1500px) {
+  #home {
+    gap: 40px;
+  }
+
+  #cta {
+    width: 44%;
+  }
+
+  #banner {
+    width: 56%;
+    padding: 12px 0 24px;
+  }
+
+  .banner-emoji {
+    width: 60px;
+    height: 60px;
+    font-size: 1.5rem;
+  }
+
+  .banner-chip {
+    padding: 12px 16px;
+    font-size: 0.82rem;
+    gap: 6px;
+  }
+
+  .banner-emoji.emoji-star {
+    top: 8%;
+    right: 60%;
+  }
+
+  .banner-emoji.emoji-heart {
+    bottom: 24%;
+    right: 44%;
+  }
+
+  .banner-emoji.emoji-crepe {
+    top: 46%;
+    right: 8%;
+  }
+
+  .banner-chip.chip-delivery {
+    top: 8%;
+    right: 10%;
+  }
+
+  .banner-chip.chip-chef {
+    bottom: 10%;
+    left: 6%;
+  }
+
+  .banner-chip.chip-rating {
+    top: 58%;
+    right: 14%;
+  }
+}
+
+@media screen and (max-width: 1320px) {
+  #home {
+    align-items: flex-end;
+  }
+
+  #banner {
+    width: 52%;
+    padding: 20px 0 36px;
+  }
+
+  #banner img {
+    max-height: 560px;
+  }
+
+  .banner-emoji {
+    width: 56px;
+    height: 56px;
+    font-size: 1.35rem;
+  }
+
+  .banner-chip {
+    padding: 10px 14px;
+    font-size: 0.78rem;
+  }
+
+  .banner-emoji.emoji-heart {
+    right: 36%;
+    bottom: 30%;
+  }
+
+  .banner-chip.chip-chef {
+    left: 10%;
+    bottom: 14%;
+  }
+
+  .banner-chip.chip-rating {
+    right: 10%;
+    top: 64%;
+  }
 }
 
 @media screen and (max-width: 1170px) {
@@ -305,4 +454,7 @@ body[data-theme='dark'] .banner-chip::after {
     animation-duration: 7s !important;
     animation-iteration-count: infinite !important;
   }
+}
+#home .fa-star {
+  color: #ffc400;
 }

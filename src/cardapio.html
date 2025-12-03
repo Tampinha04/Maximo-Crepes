@@ -27,7 +27,14 @@
     <title>Card&aacute;pio | M&aacute;ximo Crepes</title>
   </head>
   <body class="cardapio-page" data-theme="light">
-    <header>
+    <div id="page_preloader" role="status" aria-live="polite">
+      <div class="preloader-core">
+        <span class="preloader-spinner" aria-hidden="true"></span>
+        <strong>Carregando M&aacute;ximo Crepes</strong>
+        <p>Preparando seu card&aacute;pio completo...</p>
+      </div>
+    </div>
+    <header class="site-header">
       <nav id="navbar">
         <a href="../index.html#home" class="nav-logo" aria-label="Ir para a p&aacute;gina inicial">
           <img src="images/logo.png" alt="Logotipo M&aacute;ximo Crepes" />
@@ -37,7 +44,7 @@
             <a href="../index.html#home">In&iacute;cio</a>
           </li>
           <li class="nav-item active">
-            <a href="#menu-principal" aria-current="page">Card&aacute;pio</a>
+            <a href="#cardapio-hero" aria-current="page">Card&aacute;pio</a>
           </li>
           <li class="nav-item">
             <a href="../index.html#testimonials">Avalia&ccedil;&otilde;es</a>
@@ -46,12 +53,23 @@
             <a href="../index.html#mapa">Localiza&ccedil;&atilde;o</a>
           </li>
           <li class="nav-item">
+            <a href="../index.html#comunidade">Clube exclusivo</a>
+          </li>
+          <li class="nav-item">
             <a href="../index.html#sobre-nos">Sobre n&oacute;s</a>
           </li>
         </ul>
         <div class="nav-actions">
           <button id="theme_toggle" class="theme-toggle" type="button" aria-pressed="false">
-            <i class="fa-solid fa-moon"></i>
+            <span class="theme-toggle__icon" aria-hidden="true">
+              <span class="theme-toggle__sun"></span>
+              <span class="theme-toggle__moon"></span>
+              <span class="theme-toggle__stars"></span>
+            </span>
+            <div class="theme-toggle__text theme-toggle__text--inline" aria-hidden="true">
+              <span class="theme-toggle__title">Tema do site</span>
+              <span class="theme-toggle__state">Modo claro</span>
+            </div>
             <span class="sr-only">Ativar modo escuro</span>
           </button>
           <a href="https://api.whatsapp.com/send?phone=5561982714522&text=Ol%C3%A1!%20%F0%9F%98%8B%20Quero%20fazer%20meu%20pedido%20e%20aproveitar%20as%20del%C3%ADcias%20do%20M%C3%A1ximo%20Crepes!
@@ -74,7 +92,15 @@
           <li class="nav-item"><a href="../index.html#home">Voltar para o site</a></li>
         </ul>
         <button id="mobile_theme_toggle" class="theme-toggle mobile-only" type="button" aria-pressed="false">
-          <i class="fa-solid fa-moon"></i>
+          <span class="theme-toggle__icon" aria-hidden="true">
+            <span class="theme-toggle__sun"></span>
+            <span class="theme-toggle__moon"></span>
+            <span class="theme-toggle__stars"></span>
+          </span>
+          <div class="theme-toggle__text" aria-hidden="true">
+            <span class="theme-toggle__title">Tema do site</span>
+            <span class="theme-toggle__state">Modo claro</span>
+          </div>
           <span class="sr-only">Ativar modo escuro</span>
         </button>
         <a href="https://api.whatsapp.com/send?phone=5561982714522&text=Ol%C3%A1!%20%F0%9F%98%8B%20Quero%20fazer%20meu%20pedido%20e%20aproveitar%20as%20del%C3%ADcias%20do%20M%C3%A1ximo%20Crepes!
@@ -84,23 +110,58 @@
     <main>
       <section id="cardapio-hero" class="menu-hero">
         <div class="menu-hero__content">
-          <span class="menu-hero__badge">Atualizado diariamente</span>
+          <div class="menu-hero__status">
+            <span class="menu-hero__status-pill">
+              <i class="fa-solid fa-medal" aria-hidden="true"></i>
+              Qualidade Máxima
+            </span>
+            <span class="menu-hero__status-pill">
+              <i class="fa-solid fa-motorcycle" aria-hidden="true"></i>
+              Entrega turbinada
+            </span>
+            <span class="menu-hero__status-pill">
+              <i class="fa-solid fa-star" aria-hidden="true"></i>
+              Avalia&ccedil;&otilde;es 4,9/5
+            </span>
+          </div>
           <h1>Card&aacute;pio M&aacute;ximo Crepes</h1>
           <p>
-            Nosso card&aacute;pio combina receitas autorais e ingredientes frescos para surpreender em cada pedido.
-            Escolha seus favoritos entre crepes salgados, doces e hamb&uacute;rgueres artesanais feitos na hora.
+            No Máximo Crepes, cada receita nasce da vontade de oferecer uma experiência única, unindo sabor, cuidado e ingredientes selecionados com carinho. Trabalhamos diariamente para entregar crepes e hambúrgueres que realmente surpreendem — daqueles que despertam memória afetiva e garantem conforto em cada mordida.
+
+Aqui você encontra desde opções clássicas até combinações autorais criadas especialmente para quem ama descobrir novos sabores. Tudo é preparado na hora, com massas leves, recheios generosos e ingredientes frescos, resultando no equilíbrio perfeito entre textura, aroma e qualidade.
+
+Escolha o seu favorito e permita-se viver uma experiência gastronômica completa, do preparo ao último pedaço.
           </p>
-          <div class="menu-hero__actions">
-            <a href="https://api.whatsapp.com/send?phone=5561982714522&text=Ol%C3%A1!%20%F0%9F%98%8B%20Quero%20fazer%20meu%20pedido%20e%20aproveitar%20as%20del%C3%ADcias%20do%20M%C3%A1ximo%20Crepes!
-" class="btn-default">
-              <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
-              Fazer pedido agora
-            </a>
-            <a href="../index.html#mapa" class="menu-hero__link">Ver endere&ccedil;o</a>
-          </div>
         </div>
-        <div class="menu-hero__media">
-          <img src="images/hero.png" alt="Crepe artesanal servido com recheio farto" loading="lazy" />
+        <div class="menu-hero__media" aria-label="Espa&ccedil;o para imagem 1080 por 1080 pixels">
+          <div class="menu-hero__photo-shell">
+            <img src="images/imagem chamativa.png" alt="Crepe artesanal servido com recheio farto" loading="lazy" />
+          </div>
+          <span class="menu-hero__media-caption"></span>
+        </div>
+        <div class="menu-hero__actions">
+          <a href="https://api.whatsapp.com/send?phone=5561982714522&text=Ol%C3%A1!%20%F0%9F%98%8B%20Quero%20fazer%20meu%20pedido%20e%20aproveitar%20as%20del&iacute;cias%20do%20M&aacute;ximo%20Crepes!
+" class="btn-default">
+            <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+            Fazer pedido agora
+          </a>
+          <a href="../index.html#mapa" class="menu-hero__link">Ver endere&ccedil;o</a>
+        </div>
+        <div class="menu-hero__media-badges">
+          <div class="media-badge">
+            <i class="fa-solid fa-fire" aria-hidden="true"></i>
+            <div>
+              <strong>Favorito da casa</strong>
+              <span>Crepe do Papai</span>
+            </div>
+          </div>
+          <div class="media-badge">
+            <i class="fa-solid fa-clock" aria-hidden="true"></i>
+            <div>
+              <strong>Preparado na hora</strong>
+              <span>Em média 7 minutos</span>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -139,7 +200,7 @@
           <div class="menu-grid">
             <article class="menu-card">
               <figure class="menu-card__media">
-                <img src="images/cardapio/papai.jpg" alt="Crepe do Papai com carne de sol, bacon e calabresa" loading="lazy" />
+                <img src="https://i.postimg.cc/1gnTgwqN/papai.png" alt="Crepe do Papai com carne de sol, bacon e calabresa" loading="lazy" />
               </figure>
               <div class="menu-card__body">
                 <header class="menu-card__header">
@@ -153,7 +214,7 @@
             </article>
             <article class="menu-card">
               <figure class="menu-card__media">
-                <img src="images/cardapio/mamae.jpg" alt="Crepe da Mam&atilde;e com frango, bacon e calabresa" loading="lazy" />
+                <img src="https://i.postimg.cc/1gnTgwNd/mamae.png" alt="Crepe da Mam&atilde;e com frango, bacon e calabresa" loading="lazy" />
               </figure>
               <div class="menu-card__body">
                 <header class="menu-card__header">
@@ -167,7 +228,7 @@
             </article>
             <article class="menu-card">
               <figure class="menu-card__media">
-                <img src="images/cardapio/carnedesol.jpg" alt="Crepe Carne de Sol com milho e catupiry" loading="lazy" />
+                <img src="https://i.postimg.cc/zyP6X03p/carnedesol.png" alt="Crepe Carne de Sol com milho e catupiry" loading="lazy" />
               </figure>
               <div class="menu-card__body">
                 <header class="menu-card__header">
@@ -181,7 +242,7 @@
             </article>
             <article class="menu-card">
               <figure class="menu-card__media">
-                <img src="images/cardapio/baconcomcatupiry.jpg" alt="Crepe Bacon com Catupiry" loading="lazy" />
+                <img src="https://i.postimg.cc/PCq0jBfQ/baconcomcatupiry.png" alt="Crepe Bacon com Catupiry" loading="lazy" />
               </figure>
               <div class="menu-card__body">
                 <header class="menu-card__header">
@@ -195,7 +256,7 @@
             </article>
             <article class="menu-card">
               <figure class="menu-card__media">
-                <img src="images/cardapio/frangocombacon.jpg" alt="Crepe Frango com Bacon" loading="lazy" />
+                <img src="https://i.postimg.cc/nXwgc0Mg/frangocombacon.jpg" alt="Crepe Frango com Bacon" loading="lazy" />
               </figure>
               <div class="menu-card__body">
                 <header class="menu-card__header">
@@ -209,7 +270,7 @@
             </article>
             <article class="menu-card">
               <figure class="menu-card__media">
-                <img src="images/logo.png" alt="Ilustra&ccedil;&atilde;o do crepe Frango com Calabresa" loading="lazy" />
+                <img src="https://i.postimg.cc/LJ0w6NnK/frangocomcalabresa.png" alt="Ilustra&ccedil;&atilde;o do crepe Frango com Calabresa" loading="lazy" />
               </figure>
               <div class="menu-card__body">
                 <header class="menu-card__header">
@@ -223,7 +284,7 @@
             </article>
             <article class="menu-card">
               <figure class="menu-card__media">
-                <img src="images/cardapio/calabresa.jpg" alt="Crepe Calabresa" loading="lazy" />
+                <img src="https://i.postimg.cc/9DfshvXt/calabresa.png" alt="Crepe Calabresa" loading="lazy" />
               </figure>
               <div class="menu-card__body">
                 <header class="menu-card__header">
@@ -237,7 +298,7 @@
             </article>
             <article class="menu-card">
               <figure class="menu-card__media">
-                <img src="images/cardapio/frangocomazeitona.jpg" alt="Crepe Frango com Azeitona" loading="lazy" />
+                <img src="https://i.postimg.cc/ZWD2KV0Q/frangocomazeitona.jpg" alt="Crepe Frango com Azeitona" loading="lazy" />
               </figure>
               <div class="menu-card__body">
                 <header class="menu-card__header">
@@ -251,7 +312,7 @@
             </article>
             <article class="menu-card">
               <figure class="menu-card__media">
-                <img src="images/cardapio/frangocompalmito.jpg" alt="Crepe Frango com Palmito" loading="lazy" />
+                <img src="https://i.postimg.cc/hX36PpfR/frangocompalmito.jpg" alt="Crepe Frango com Palmito" loading="lazy" />
               </figure>
               <div class="menu-card__body">
                 <header class="menu-card__header">
@@ -265,7 +326,7 @@
             </article>
             <article class="menu-card">
               <figure class="menu-card__media">
-                <img src="images/cardapio/frangocomcatupiry.jpg" alt="Crepe Frango com Catupiry" loading="lazy" />
+                <img src="https://i.postimg.cc/bZFWN3s8/frangocomcatupiry.png" alt="Crepe Frango com Catupiry" loading="lazy" />
               </figure>
               <div class="menu-card__body">
                 <header class="menu-card__header">
@@ -279,7 +340,7 @@
             </article>
             <article class="menu-card">
               <figure class="menu-card__media">
-                <img src="images/cardapio/napolitano.jpg" alt="Crepe Napolitano com presunto e tomate" loading="lazy" />
+                <img src="https://i.postimg.cc/GB8NBGy4/napolitano.png" alt="Crepe Napolitano com presunto e tomate" loading="lazy" />
               </figure>
               <div class="menu-card__body">
                 <header class="menu-card__header">
@@ -293,7 +354,7 @@
             </article>
             <article class="menu-card">
               <figure class="menu-card__media">
-                <img src="images/logo.png" alt="Ilustra&ccedil;&atilde;o do crepe de Queijo" loading="lazy" />
+                <img src="https://i.postimg.cc/CR6XLmdr/fotosemfoto.png" alt="Ilustra&ccedil;&atilde;o do crepe de Queijo" loading="lazy" />
               </figure>
               <div class="menu-card__body">
                 <header class="menu-card__header">
@@ -315,7 +376,7 @@
           <div class="menu-grid">
             <article class="menu-card">
               <figure class="menu-card__media">
-                <img src="images/cardapio/baconsupreme.jpg" alt="Crepe Bacon Supreme com cheddar" loading="lazy" />
+                <img src="https://i.postimg.cc/5XtDVZ9g/bacon-supreme.png" alt="Crepe Bacon Supreme com cheddar" loading="lazy" />
               </figure>
               <div class="menu-card__body">
                 <header class="menu-card__header">
@@ -329,7 +390,7 @@
             </article>
             <article class="menu-card">
               <figure class="menu-card__media">
-                <img src="images/cardapio/baconcombanana.jpg" alt="Crepe Bacon com Banana e borda de queijo" loading="lazy" />
+                <img src="https://i.postimg.cc/ZWqXS1YL/baconcombanana.png" alt="Crepe Bacon com Banana e borda de queijo" loading="lazy" />
               </figure>
               <div class="menu-card__body">
                 <header class="menu-card__header">
@@ -343,7 +404,7 @@
             </article>
             <article class="menu-card">
               <figure class="menu-card__media">
-                <img src="images/logo.png" alt="Ilustra&ccedil;&atilde;o do crepe Carne de Sol Especial" loading="lazy" />
+                <img src="https://i.postimg.cc/MnrNKdXd/carnedesolespecial.png" alt="Ilustra&ccedil;&atilde;o do crepe Carne de Sol Especial" loading="lazy" />
               </figure>
               <div class="menu-card__body">
                 <header class="menu-card__header">
@@ -357,7 +418,7 @@
             </article>
             <article class="menu-card">
               <figure class="menu-card__media">
-                <img src="images/logo.png" alt="Ilustra&ccedil;&atilde;o do crepe Carne com Banana" loading="lazy" />
+                <img src="https://i.postimg.cc/CR6XLmdr/fotosemfoto.png" alt="Ilustra&ccedil;&atilde;o do crepe Carne com Banana" loading="lazy" />
               </figure>
               <div class="menu-card__body">
                 <header class="menu-card__header">
@@ -371,7 +432,7 @@
             </article>
             <article class="menu-card">
               <figure class="menu-card__media">
-                <img src="images/logo.png" alt="Ilustra&ccedil;&atilde;o do crepe Frango Caipira" loading="lazy" />
+                <img src="https://i.postimg.cc/4YFqNBnM/frangocaipira.png" alt="Ilustra&ccedil;&atilde;o do crepe Frango Caipira" loading="lazy" />
               </figure>
               <div class="menu-card__body">
                 <header class="menu-card__header">
@@ -393,7 +454,7 @@
           <div class="menu-grid">
             <article class="menu-card">
               <figure class="menu-card__media">
-                <img src="images/cardapio/vegetariano.png" alt="Ilustra&ccedil;&atilde;o do crepe Vegetariano" loading="lazy" />
+                <img src="https://i.postimg.cc/XZRP9qfy/vegetariano.png" alt="Ilustra&ccedil;&atilde;o do crepe Vegetariano" loading="lazy" />
               </figure>
               <div class="menu-card__body">
                 <header class="menu-card__header">
@@ -407,7 +468,7 @@
             </article>
             <article class="menu-card">
               <figure class="menu-card__media">
-                <img src="images/logo.png" alt="Ilustra&ccedil;&atilde;o do crepe R&uacute;cula com Tomate Seco" loading="lazy" />
+                <img src="https://i.postimg.cc/mcvn7kYr/ruculacomtomateseco.png" alt="Ilustra&ccedil;&atilde;o do crepe R&uacute;cula com Tomate Seco" loading="lazy" />
               </figure>
               <div class="menu-card__body">
                 <header class="menu-card__header">
@@ -421,7 +482,7 @@
             </article>
             <article class="menu-card">
               <figure class="menu-card__media">
-                <img src="images/cardapio/margherita.jpg" alt="Crepe Margherita com tomate e manjeric&atilde;o" loading="lazy" />
+                <img src="https://i.postimg.cc/Ffdqf3Jw/margherita.jpg" alt="Crepe Margherita com tomate e manjeric&atilde;o" loading="lazy" />
               </figure>
               <div class="menu-card__body">
                 <header class="menu-card__header">
@@ -443,7 +504,7 @@
           <div class="menu-grid">
             <article class="menu-card">
               <figure class="menu-card__media">
-                <img src="images/logo.png" alt="Ilustra&ccedil;&atilde;o do crepe Tropical" loading="lazy" />
+                <img src="https://i.postimg.cc/2qbJqhZj/morangocomchocolate.png" alt="Ilustra&ccedil;&atilde;o do crepe Tropical" loading="lazy" />
               </figure>
               <div class="menu-card__body">
                 <header class="menu-card__header">
@@ -457,7 +518,7 @@
             </article>
             <article class="menu-card">
               <figure class="menu-card__media">
-                <img src="images/logo.png" alt="Ilustra&ccedil;&atilde;o do crepe Morango com Chocolate" loading="lazy" />
+                <img src="https://i.postimg.cc/2qbJqhZj/morangocomchocolate.png" alt="Ilustra&ccedil;&atilde;o do crepe Morango com Chocolate" loading="lazy" />
               </figure>
               <div class="menu-card__body">
                 <header class="menu-card__header">
@@ -471,7 +532,7 @@
             </article>
             <article class="menu-card">
               <figure class="menu-card__media">
-                <img src="images/cardapio/prestigio.jpg" alt="Crepe Ouro Branco com chocolate" loading="lazy" />
+                <img src="https://i.postimg.cc/CR6XLmdr/fotosemfoto.png" alt="Crepe Ouro Branco com chocolate" loading="lazy" />
               </figure>
               <div class="menu-card__body">
                 <header class="menu-card__header">
@@ -485,7 +546,7 @@
             </article>
             <article class="menu-card">
               <figure class="menu-card__media">
-                <img src="images/logo.png" alt="Ilustra&ccedil;&atilde;o do crepe Banana com Chocolate" loading="lazy" />
+                <img src="https://i.postimg.cc/CR6XLmdr/fotosemfoto.png" alt="Ilustra&ccedil;&atilde;o do crepe Banana com Chocolate" loading="lazy" />
               </figure>
               <div class="menu-card__body">
                 <header class="menu-card__header">
@@ -499,7 +560,7 @@
             </article>
             <article class="menu-card">
               <figure class="menu-card__media">
-                <img src="images/logo.png" alt="Ilustra&ccedil;&atilde;o do crepe Banana Caramelada" loading="lazy" />
+                <img src="https://i.postimg.cc/CR6XLmdr/fotosemfoto.png" alt="Ilustra&ccedil;&atilde;o do crepe Banana Caramelada" loading="lazy" />
               </figure>
               <div class="menu-card__body">
                 <header class="menu-card__header">
@@ -513,7 +574,7 @@
             </article>
             <article class="menu-card">
               <figure class="menu-card__media">
-                <img src="images/cardapio/prestigio.jpg" alt="Crepe Prest&iacute;gio com chocolate e coco" loading="lazy" />
+                <img src="https://i.postimg.cc/TyLSygD5/prestigio.jpg" alt="Crepe Prest&iacute;gio com chocolate e coco" loading="lazy" />
               </figure>
               <div class="menu-card__body">
                 <header class="menu-card__header">
@@ -527,7 +588,7 @@
             </article>
             <article class="menu-card">
               <figure class="menu-card__media">
-                <img src="images/logo.png" alt="Ilustra&ccedil;&atilde;o do crepe Chocolate com Pa&ccedil;oca" loading="lazy" />
+                <img src="https://i.postimg.cc/CR6XLmdr/fotosemfoto.png" alt="Ilustra&ccedil;&atilde;o do crepe Chocolate com Pa&ccedil;oca" loading="lazy" />
               </figure>
               <div class="menu-card__body">
                 <header class="menu-card__header">
@@ -541,7 +602,7 @@
             </article>
             <article class="menu-card">
               <figure class="menu-card__media">
-                <img src="images/logo.png" alt="Ilustra&ccedil;&atilde;o do crepe Pa&ccedil;oquita" loading="lazy" />
+                <img src="https://i.postimg.cc/CR6XLmdr/fotosemfoto.png" alt="Ilustra&ccedil;&atilde;o do crepe Pa&ccedil;oquita" loading="lazy" />
               </figure>
               <div class="menu-card__body">
                 <header class="menu-card__header">
@@ -555,7 +616,7 @@
             </article>
             <article class="menu-card">
               <figure class="menu-card__media">
-                <img src="images/logo.png" alt="Ilustra&ccedil;&atilde;o do crepe Creme de Avel&atilde;" loading="lazy" />
+                <img src="https://i.postimg.cc/CR6XLmdr/fotosemfoto.png" alt="Ilustra&ccedil;&atilde;o do crepe Creme de Avel&atilde;" loading="lazy" />
               </figure>
               <div class="menu-card__body">
                 <header class="menu-card__header">
@@ -569,7 +630,7 @@
             </article>
             <article class="menu-card">
               <figure class="menu-card__media">
-                <img src="images/logo.png" alt="Ilustra&ccedil;&atilde;o do crepe Doce de Leite" loading="lazy" />
+                <img src="https://i.postimg.cc/CR6XLmdr/fotosemfoto.png" alt="Ilustra&ccedil;&atilde;o do crepe Doce de Leite" loading="lazy" />
               </figure>
               <div class="menu-card__body">
                 <header class="menu-card__header">
@@ -583,7 +644,7 @@
             </article>
             <article class="menu-card">
               <figure class="menu-card__media">
-                <img src="images/logo.png" alt="Ilustra&ccedil;&atilde;o do crepe Leite Condensado" loading="lazy" />
+                <img src="https://i.postimg.cc/CR6XLmdr/fotosemfoto.png" alt="Ilustra&ccedil;&atilde;o do crepe Leite Condensado" loading="lazy" />
               </figure>
               <div class="menu-card__body">
                 <header class="menu-card__header">
@@ -597,7 +658,7 @@
             </article>
             <article class="menu-card">
               <figure class="menu-card__media">
-                <img src="images/logo.png" alt="Ilustra&ccedil;&atilde;o do crepe Romeu e Julieta" loading="lazy" />
+                <img src="https://i.postimg.cc/CR6XLmdr/fotosemfoto.png" alt="Ilustra&ccedil;&atilde;o do crepe Romeu e Julieta" loading="lazy" />
               </figure>
               <div class="menu-card__body">
                 <header class="menu-card__header">
@@ -619,7 +680,7 @@
           <div class="menu-grid">
             <article class="menu-card">
               <figure class="menu-card__media">
-                <img src="images/logo.png" alt="Ilustra&ccedil;&atilde;o do lanche X-Baguncinha" loading="lazy" />
+                <img src="https://i.postimg.cc/7GSW949t/x-baguncinha.png" alt="Ilustra&ccedil;&atilde;o do lanche X-Baguncinha" loading="lazy" />
               </figure>
               <div class="menu-card__body">
                 <header class="menu-card__header">
@@ -633,7 +694,7 @@
             </article>
             <article class="menu-card">
               <figure class="menu-card__media">
-                <img src="images/logo.png" alt="Ilustra&ccedil;&atilde;o do lanche X-Tudo" loading="lazy" />
+                <img src="https://i.postimg.cc/V01HHhH0/x-tudo.png" alt="Ilustra&ccedil;&atilde;o do lanche X-Tudo" loading="lazy" />
               </figure>
               <div class="menu-card__body">
                 <header class="menu-card__header">
@@ -647,7 +708,7 @@
             </article>
             <article class="menu-card">
               <figure class="menu-card__media">
-                <img src="images/logo.png" alt="Ilustra&ccedil;&atilde;o do lanche X-Bacon" loading="lazy" />
+                <img src="https://i.postimg.cc/S2cvd4VS/x-bacon.png" alt="Ilustra&ccedil;&atilde;o do lanche X-Bacon" loading="lazy" />
               </figure>
               <div class="menu-card__body">
                 <header class="menu-card__header">
@@ -661,7 +722,7 @@
             </article>
             <article class="menu-card">
               <figure class="menu-card__media">
-                <img src="images/logo.png" alt="Ilustra&ccedil;&atilde;o do lanche X-Salada" loading="lazy" />
+                <img src="https://i.postimg.cc/XrDm7QXs/foto-sem-foto2.png" alt="Ilustra&ccedil;&atilde;o do lanche X-Salada" loading="lazy" />
               </figure>
               <div class="menu-card__body">
                 <header class="menu-card__header">
@@ -675,7 +736,7 @@
             </article>
             <article class="menu-card">
               <figure class="menu-card__media">
-                <img src="images/logo.png" alt="Ilustra&ccedil;&atilde;o do lanche X-Burguer" loading="lazy" />
+                <img src="https://i.postimg.cc/mz75j4Vs/x-burguer.jpg" alt="Ilustra&ccedil;&atilde;o do lanche X-Burguer" loading="lazy" />
               </figure>
               <div class="menu-card__body">
                 <header class="menu-card__header">
@@ -697,7 +758,7 @@
           <div class="menu-grid">
             <article class="menu-card">
               <figure class="menu-card__media">
-                <img src="images/cardapio/maximoburger.jpg" alt="M&aacute;ximo Burger com bacon e barbecue" loading="lazy" />
+                <img src="https://i.postimg.cc/JyDgyZkw/maximoburger.png" alt="M&aacute;ximo Burger com bacon e barbecue" loading="lazy" />
               </figure>
               <div class="menu-card__body">
                 <header class="menu-card__header">
@@ -711,7 +772,7 @@
             </article>
             <article class="menu-card">
               <figure class="menu-card__media">
-                <img src="images/logo.png" alt="Ilustra&ccedil;&atilde;o do lanche Chicken Supreme" loading="lazy" />
+                <img src="https://i.postimg.cc/XrDm7QXs/foto-sem-foto2.png" alt="Ilustra&ccedil;&atilde;o do lanche Chicken Supreme" loading="lazy" />
               </figure>
               <div class="menu-card__body">
                 <header class="menu-card__header">
@@ -725,7 +786,7 @@
             </article>
             <article class="menu-card">
               <figure class="menu-card__media">
-                <img src="images/logo.png" alt="Ilustra&ccedil;&atilde;o do lanche Frango ao Pesto" loading="lazy" />
+                <img src="https://i.postimg.cc/XrDm7QXs/foto-sem-foto2.png" alt="Ilustra&ccedil;&atilde;o do lanche Frango ao Pesto" loading="lazy" />
               </figure>
               <div class="menu-card__body">
                 <header class="menu-card__header">
@@ -739,7 +800,7 @@
             </article>
             <article class="menu-card">
               <figure class="menu-card__media">
-                <img src="images/logo.png" alt="Ilustra&ccedil;&atilde;o do lanche Nordestino com queijo coalho" loading="lazy" />
+                <img src="https://i.postimg.cc/kV6ZVKbV/nordestino.png" alt="Ilustra&ccedil;&atilde;o do lanche Nordestino com queijo coalho" loading="lazy" />
               </figure>
               <div class="menu-card__body">
                 <header class="menu-card__header">
@@ -753,7 +814,7 @@
             </article>
             <article class="menu-card">
               <figure class="menu-card__media">
-                <img src="images/logo.png" alt="Ilustra&ccedil;&atilde;o do lanche Caramelizado Burger" loading="lazy" />
+                <img src="https://i.postimg.cc/XrDm7QXs/foto-sem-foto2.png" alt="Ilustra&ccedil;&atilde;o do lanche Caramelizado Burger" loading="lazy" />
               </figure>
               <div class="menu-card__body">
                 <header class="menu-card__header">
@@ -767,7 +828,7 @@
             </article>
             <article class="menu-card">
               <figure class="menu-card__media">
-                <img src="images/logo.png" alt="Ilustra&ccedil;&atilde;o do lanche American Burger" loading="lazy" />
+                <img src="https://i.postimg.cc/XrDm7QXs/foto-sem-foto2.png" alt="Ilustra&ccedil;&atilde;o do lanche American Burger" loading="lazy" />
               </figure>
               <div class="menu-card__body">
                 <header class="menu-card__header">
@@ -781,7 +842,7 @@
             </article>
             <article class="menu-card">
               <figure class="menu-card__media">
-                <img src="images/logo.png" alt="Ilustra&ccedil;&atilde;o do lanche Salad Burger" loading="lazy" />
+                <img src="https://i.postimg.cc/XrDm7QXs/foto-sem-foto2.png" alt="Ilustra&ccedil;&atilde;o do lanche Salad Burger" loading="lazy" />
               </figure>
               <div class="menu-card__body">
                 <header class="menu-card__header">
